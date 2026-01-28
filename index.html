@@ -98,6 +98,9 @@
 
     <nav class="sticky-nav">
         <div class="max-w-5xl mx-auto flex justify-around items-center h-full px-2">
+            <a href="#summary" onclick="smoothScroll(event, 'summary')" class="text-[10px] md:text-sm font-bold text-gray-600 flex flex-col items-center hover:text-blue-600 transition">
+                <i class="fas fa-route mb-1 text-lg"></i>行程摘要
+            </a>
             <a href="#itinerary" onclick="smoothScroll(event, 'itinerary')" class="text-[10px] md:text-sm font-bold text-gray-600 flex flex-col items-center hover:text-blue-600 transition">
                 <i class="fas fa-map-marked-alt mb-1 text-lg"></i>每日行程
             </a>
@@ -109,9 +112,6 @@
             </a>
             <a href="#prep" onclick="smoothScroll(event, 'prep')" class="text-[10px] md:text-sm font-bold text-gray-600 flex flex-col items-center hover:text-blue-600 transition">
                 <i class="fas fa-clipboard-check mb-1 text-lg"></i>行前準備
-            </a>
-            <a href="#references" onclick="smoothScroll(event, 'references')" class="text-[10px] md:text-sm font-bold text-gray-600 flex flex-col items-center hover:text-blue-600 transition">
-                <i class="fas fa-images mb-1 text-lg"></i>參考資料
             </a>
         </div>
     </nav>
@@ -132,6 +132,65 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-4 mt-8 space-y-12">
+
+        <section id="summary" class="anchor-section">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center border-l-4 border-indigo-500 pl-3">視覺化行程摘要</h2>
+            <div class="bg-white rounded-3xl shadow-xl p-8 border border-gray-100 overflow-hidden">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center relative gap-8 md:gap-2">
+                    <div class="hidden md:block absolute top-6 left-0 w-full h-0.5 bg-gray-100 -translate-y-1/2 z-0"></div>
+                    
+                    <div class="relative z-10 flex md:flex-col items-center gap-4 md:gap-2 bg-white pr-4 md:pr-0">
+                        <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-white shadow-lg shadow-indigo-100 border-4 border-white">
+                            <i class="fas fa-plane-departure text-sm"></i>
+                        </div>
+                        <div class="text-left md:text-center">
+                            <p class="text-[9px] font-bold text-indigo-500 uppercase tracking-widest">Start</p>
+                            <p class="text-xs font-bold text-gray-800">台北 TPE</p>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 flex md:flex-col items-center gap-4 md:gap-2 bg-white pr-4 md:pr-0">
+                        <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-lg shadow-blue-100 border-4 border-white">
+                            <i class="fas fa-utensils text-sm"></i>
+                        </div>
+                        <div class="text-left md:text-center">
+                            <p class="text-[9px] font-bold text-blue-400 uppercase tracking-widest">Day 1, 4, 5</p>
+                            <p class="text-xs font-bold text-gray-800">仙台：牛舌/朝市</p>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 flex md:flex-col items-center gap-4 md:gap-2 bg-white pr-4 md:pr-0">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-white shadow-lg shadow-emerald-100 border-4 border-white">
+                            <i class="fas fa-skiing text-sm"></i>
+                        </div>
+                        <div class="text-left md:text-center">
+                            <p class="text-[9px] font-bold text-emerald-400 uppercase tracking-widest">Day 2-3</p>
+                            <p class="text-xs font-bold text-gray-800">藏王：滑雪/樹冰</p>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 flex md:flex-col items-center gap-4 md:gap-2 bg-white pr-4 md:pr-0">
+                        <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center text-white shadow-lg shadow-pink-100 border-4 border-white">
+                            <i class="fas fa-gamepad text-sm"></i>
+                        </div>
+                        <div class="text-left md:text-center">
+                            <p class="text-[9px] font-bold text-pink-400 uppercase tracking-widest">Day 5-7</p>
+                            <p class="text-xs font-bold text-gray-800">大阪：VS PARK/購物</p>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 flex md:flex-col items-center gap-4 md:gap-2 bg-white pr-4 md:pr-0">
+                        <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-white shadow-lg shadow-indigo-100 border-4 border-white">
+                            <i class="fas fa-home text-sm"></i>
+                        </div>
+                        <div class="text-left md:text-center">
+                            <p class="text-[9px] font-bold text-indigo-500 uppercase tracking-widest">End</p>
+                            <p class="text-xs font-bold text-gray-800">台北 Home</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <section id="itinerary" class="anchor-section">
             <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center border-l-4 border-blue-500 pl-3">每日行程內容</h2>
@@ -150,18 +209,11 @@
                     <div id="day-1" class="day-content space-y-3">
                         <p class="font-bold text-blue-700 underline decoration-blue-200 decoration-2">2/09 (一) 飛往仙台與牛舌晚宴</p>
                         <ul class="list-disc pl-5 space-y-2 border-l-4 border-blue-500/20 ml-1 text-gray-600">
-                            <li>06:30 <a href="https://www.google.com/maps/search/?api=1&query=桃園國際機場" target="_blank" class="map-btn">TPE</a> → 15:55 <a href="https://www.google.com/maps/search/?api=1&query=仙台空港" target="_blank" class="map-btn">SDJ</a> <span class="status-tag status-open">正常</span></li>
-                            <li><span class="font-bold text-blue-600">晚餐建議：</span><a href="https://www.google.com/maps/search/?api=1&query=牛舌善治郎+仙台站前本店" target="_blank" class="underline">牛舌善治郎 本店</a> (22:30關) <span class="status-tag status-open">正常</span></li>
+                            <li>06:30 <a href="https://www.google.com/maps/search/?api=1&query=桃園國際機場" target="_blank" class="map-btn">TPE</a> → 15:55 <a href="https://www.google.com/maps/search/?api=1&query=仙台空港" target="_blank" class="map-btn">SDJ</a></li>
+                            <li><span class="font-bold text-blue-600">晚餐建議：</span><a href="https://www.google.com/maps/search/?api=1&query=牛舌善治郎+仙台站前本店" target="_blank" class="underline">牛舌善治郎 本店</a> (22:30關)</li>
                             <li>入住 <a href="https://www.google.com/maps/search/?api=1&query=Henn+na+Hotel+Sendai+Kokubuncho" target="_blank" class="map-btn">海茵娜飯店 仙台國分町</a></li>
                             <li><span class="text-red-500 font-bold">必做：</span>晚餐後於 <a href="https://www.google.com/maps/search/?api=1&query=Sendai+Station+Supermarket" target="_blank" class="underline">仙台站超市</a> 買妥隔日早餐。</li>
                         </ul>
-                        <div class="ref-attractions">
-                            <p class="text-xs font-bold text-gray-500 mb-2">💡 參考景點 (近仙台站)</p>
-                            <ul class="text-[11px] space-y-1">
-                                <li>• <a href="https://www.google.com/maps/search/?api=1&query=Cat+Cafe+MOFF+Sendai+PARCO" target="_blank" class="font-bold underline text-blue-600">Cat Café MOFF</a>：位於 PARCO 本館 5F，距離住宿步行約15分。</li>
-                                <li>• <a href="https://www.google.com/maps/search/?api=1&query=JUMP+SHOP+Sendai" target="_blank" class="font-bold underline text-blue-600">JUMP Shop</a>：PARCO 本館 8F，距離住宿步行約15分。</li>
-                            </ul>
-                        </div>
                     </div>
                     <div id="day-2" class="day-content hidden space-y-3">
                         <p class="font-bold text-emerald-700 underline decoration-emerald-200 decoration-2">2/10 (二) 藏王雪場體驗</p>
@@ -171,14 +223,7 @@
                             <li>租雪具：<a href="https://www.google.com/maps/search/?api=1&query=Skiing+Now+鬧雪具" target="_blank" class="italic font-bold">Skiing Now 閙雪具</a></li>
                             <li>全家滑雪體驗 (單板/雙板)</li>
                             <li><span class="font-bold text-emerald-600">晚餐建議：</span><a href="https://www.google.com/maps/search/?api=1&query=Otochaya+Zao" target="_blank" class="underline">音茶屋</a></li>
-                            <li><span class="text-red-500 font-bold">重要提醒：</span>晚餐後先買好隔日早餐，山上商店極少。</li>
                         </ul>
-                        <div class="ref-attractions">
-                            <p class="text-xs font-bold text-gray-500 mb-2">💡 參考景點 (藏王地區)</p>
-                            <ul class="text-[11px] space-y-1">
-                                <li>• <a href="https://www.google.com/maps/search/?api=1&query=Zao+Fox+Village" target="_blank" class="font-bold underline text-red-500">藏王狐狸村</a>：距離飯店車程約45-60分。</li>
-                            </ul>
-                        </div>
                     </div>
                     <div id="day-3" class="day-content hidden space-y-3">
                         <p class="font-bold text-amber-700 underline decoration-amber-200 decoration-2">2/11 (三) 樹冰奇景與水果補貨</p>
@@ -194,7 +239,6 @@
                         <ul class="list-disc pl-5 space-y-2 border-l-4 border-purple-500/20 ml-1 text-gray-600">
                             <li>前往 <a href="https://www.google.com/maps/search/?api=1&query=カメイアリーナ仙台" target="_blank" class="map-btn">仙台市體育館</a> <span class="status-tag status-closed">整修休館中</span> (外觀拍照)</li>
                             <li>購物：<a href="https://www.google.com/maps/search/?api=1&query=JUMP+SHOP+Sendai" target="_blank" class="underline">Jump Shop</a>、<a href="https://www.google.com/maps/search/?api=1&query=Pokemon+Center+Sendai" target="_blank" class="underline">寶可夢中心</a>、<a href="https://www.google.com/maps/search/?api=1&query=仙台ジョイポリス+VR" target="_blank" class="underline">Joypolis VR</a></li>
-                            <li>晚餐：<a href="https://www.google.com/maps/search/?api=1&query=肉十八+仙台駅前店" target="_blank" class="underline">肉十八 燒肉吃到飽</a> (預約制)</li>
                         </ul>
                     </div>
                     <div id="day-5" class="day-content hidden space-y-3">
@@ -206,21 +250,19 @@
                         </ul>
                     </div>
                     <div id="day-6" class="day-content hidden space-y-3">
-                        <p class="font-bold text-pink-700 underline decoration-pink-200 decoration-2">2/14 (六) 大阪進階行程 (青少年推薦)</p>
+                        <p class="font-bold text-pink-700 underline decoration-pink-200 decoration-2">2/14 (六) 大阪進階行程</p>
                         <ul class="list-disc pl-5 space-y-2 border-l-4 border-pink-500/20 ml-1 text-gray-600">
-                            <li>行程：<a href="https://www.google.com/maps/search/?api=1&query=VS+PARK+ららぽーとEXPOCITY" target="_blank" class="underline font-bold text-pink-600">VS PARK (互動運動中心)</a>、<a href="https://www.google.com/maps/search/?api=1&query=アニメイト大阪日本橋" target="_blank" class="underline font-bold text-pink-600">日本橋 Animate</a></li>
+                            <li>行程：<a href="https://www.google.com/maps/search/?api=1&query=VS+PARK+ららぽーとEXPOCITY" target="_blank" class="underline font-bold text-pink-600">VS PARK</a>、<a href="https://www.google.com/maps/search/?api=1&query=アニメイト大阪日本橋" target="_blank" class="underline font-bold text-pink-600">日本橋 Animate</a></li>
                             <li>晚餐建議：<a href="https://www.google.com/maps/search/?api=1&query=Matsusakagyu+Yakiniku+M+Namba" target="_blank" class="underline">松阪牛燒肉 M</a> 或 <a href="https://www.google.com/maps/search/?api=1&query=すき焼き北むら" target="_blank" class="underline">北むら壽喜燒</a></li>
                         </ul>
                     </div>
                     <div id="day-7" class="day-content hidden space-y-4 text-gray-600">
                         <p class="font-bold text-gray-700 underline decoration-gray-200 decoration-2">2/15 (日) 分流搭機返台</p>
                         <div class="border-l-4 border-orange-500 pl-3 bg-orange-50 p-2 rounded-r-xl">
-                            <p class="font-bold text-orange-600 text-xs">一人提早行程 (BR131)：</p>
-                            <ul class="text-[10px] space-y-1 mt-1"><li>09:30 前往 KIX ＞ 12:55 登機返台。</li></ul>
+                            <p class="font-bold text-orange-600 text-xs">一人提早行程 (BR131)：12:55 登機返台。</p>
                         </div>
                         <div class="border-l-4 border-blue-500 pl-3 bg-blue-50 p-2 rounded-r-xl">
-                            <p class="font-bold text-blue-600 text-xs">其餘成員行程 (BR129)：</p>
-                            <ul class="text-[10px] space-y-1 mt-1"><li>15:30 前往 KIX ＞ 18:10 返台。</li></ul>
+                            <p class="font-bold text-blue-600 text-xs">其餘成員行程 (BR129)：18:10 登機返台。</p>
                         </div>
                     </div>
                 </div>
@@ -250,25 +292,10 @@
                                 <td colspan="2" class="p-4 text-center">日幣支付</td>
                                 <td class="p-4 text-right font-bold">¥56,040</td>
                             </tr>
-                            <tr>
-                                <td class="p-4">機場往返巴士/電車</td>
-                                <td class="p-4 text-center">¥3,260</td>
-                                <td class="p-4 text-center">¥1,640</td>
-                                <td class="p-4 text-right font-bold">¥11,420</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-bold text-blue-800">山交巴士來回</td>
-                                <td class="p-4 text-center">¥5,000</td>
-                                <td class="p-4 text-center">¥2,500</td>
-                                <td class="p-4 text-right font-bold">¥17,500</td>
-                            </tr>
-                            <tr class="bg-emerald-600 text-white font-bold"><td colspan="4" class="px-4 py-1">【 滑雪與活動 】</td></tr>
-                            <tr class="bg-emerald-50/10"><td class="p-4 font-bold">滑雪票與租借 (2日估計)</td><td class="p-4 text-center">¥24,800</td><td class="p-4 text-center">¥15,640</td><td class="p-4 text-right font-bold">¥90,040</td></tr>
-                            <tr><td class="p-4">樹冰纜車+優先券</td><td class="p-4 text-center">¥5,400</td><td class="p-4 text-center">¥3,200</td><td class="p-4 text-right font-bold">¥19,400</td></tr>
+                            <tr><td class="p-4">山交巴士來回</td><td class="p-4 text-center">¥5,000</td><td class="p-4 text-center">¥2,500</td><td class="p-4 text-right font-bold">¥17,500</td></tr>
                         </tbody>
                         <tfoot class="bg-gray-800 text-white font-bold">
                             <tr><td colspan="3" class="p-4 text-center text-[10px] italic">預計支付日幣總計</td><td class="p-4 text-right text-yellow-400 text-lg price-font">約 ¥194,400</td></tr>
-                            <tr class="bg-gray-900"><td colspan="3" class="p-4 text-center text-[11px]">全行程總計 (台幣估計)</td><td class="p-4 text-right text-emerald-400 text-lg price-font">約 TWD 144,790</td></tr>
                         </tfoot>
                     </table>
                 </div>
@@ -283,7 +310,6 @@
                     <ul class="space-y-2">
                         <li><input type="checkbox"> <span class="text-blue-600 font-bold">排汗衣 / 雪衣 / 雪褲</span></li>
                         <li><input type="checkbox"> <span class="text-blue-600 font-bold">毛帽 / 脖圍 / 手套</span></li>
-                        <li><input type="checkbox"> <span class="text-blue-600 font-bold">便攜曬衣架 / 暖暖包</span></li>
                     </ul>
                 </div>
                 <div class="bg-white p-5 rounded-3xl shadow border border-gray-100">
@@ -299,7 +325,6 @@
                     <ul class="space-y-2">
                         <li><input type="checkbox"> 常備藥 / OK蹦 / 護唇膏</li>
                         <li><input type="checkbox"> 濕紙巾 / 乾洗手 / 摺疊雨傘</li>
-                        <li><input type="checkbox"> 便攜晾衣繩 / 洗衣膠囊</li>
                     </ul>
                 </div>
             </div>
@@ -315,17 +340,8 @@
                     </summary>
                     <div class="px-6 pb-6 space-y-4">
                         <div class="grid grid-cols-2 gap-4 text-center">
-                            <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                <span class="text-[9px] font-bold text-blue-500">去程 2/10 08:00</span>
-                                <p class="font-bold text-gray-800 text-sm">仙台站東口</p>
-                            </div>
-                            <div class="bg-white p-4 rounded-2xl border border-emerald-100">
-                                <span class="text-[9px] font-bold text-emerald-500">回程 2/11 16:30</span>
-                                <p class="font-bold text-gray-800 text-sm">藏王溫泉總站</p>
-                            </div>
-                        </div>
-                        <div class="bg-white p-2 rounded-xl border text-center">                        
-                            <p class="text-[10px] text-gray-400 py-4">待上傳：bus_booking.jpg</p>
+                            <div class="bg-white p-4 rounded-2xl border border-blue-100 text-[9px] font-bold">去程 2/10 08:00 仙台站</div>
+                            <div class="bg-white p-4 rounded-2xl border border-emerald-100 text-[9px] font-bold">回程 2/11 16:30 藏王</div>
                         </div>
                     </div>
                 </details>
@@ -334,14 +350,14 @@
                         <span><i class="fas fa-shield-alt mr-2 text-red-500"></i>待處理 旅遊保險</span>
                         <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <div class="px-6 pb-6 text-center text-xs text-gray-400 italic">預留位置 (insurance.jpg)</div>
+                    <div class="px-6 pb-6 text-center text-xs text-gray-400 italic">預留照片 (insurance.jpg)</div>
                 </details>
                 <details class="bg-white rounded-3xl border border-gray-100 shadow-sm group">
                     <summary class="p-6 font-bold cursor-pointer flex justify-between items-center text-gray-800 text-sm">
                         <span><i class="fas fa-sim-card mr-2 text-emerald-500"></i>待處理 esim</span>
                         <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <div class="px-6 pb-6 text-center text-xs text-gray-400 italic">預留位置 (esim.jpg)</div>
+                    <div class="px-6 pb-6 text-center text-xs text-gray-400 italic">預留照片 (esim.jpg)</div>
                 </details>
             </div>
         </section>
@@ -375,7 +391,6 @@
                             <label class="flex items-center gap-2"><input type="checkbox"> 藥妝：洗面乳</label>
                             <label class="flex items-center gap-2"><input type="checkbox"> 超市：昆布鹽</label>
                         </div>
-                        <p class="text-xs text-gray-400 text-center italic">預留照片 (shopping_list.jpg)</p>
                     </div>
                 </details>
 
@@ -388,29 +403,24 @@
                         <div>
                             <p class="font-bold text-blue-700 mb-2 border-l-2 border-blue-500 pl-2">仙台：名物與當地牛</p>
                             <ul class="space-y-1 pl-2">
-                                <li>• <a href="https://www.google.com/maps/search/旨味太助" target="_blank" class="text-blue-600 underline">旨味太助</a> / <a href="https://www.google.com/maps/search/牛舌閣" target="_blank" class="text-blue-600 underline">牛舌 閣</a> (牛舌名店)</li>
+                                <li>• <a href="https://www.google.com/maps/search/旨味太助" target="_blank" class="text-blue-600 underline">旨味太助</a> / <a href="https://www.google.com/maps/search/牛舌閣" target="_blank" class="text-blue-600 underline">牛舌 閣</a></li>
                                 <li>• <a href="https://www.google.com/maps/search/仔虎+仙台牛燒肉" target="_blank" class="text-blue-600 underline font-bold">仔虎</a>：頂級 **仙台牛燒肉**</li>
-                                <li>• <a href="https://www.google.com/maps/search/末廣拉麵本福" target="_blank" class="text-blue-600 underline">末廣拉麵本福</a> (傳統拉麵)</li>
                                 <li>• <a href="https://www.google.com/maps/search/札幌螃蟹本家+仙台" target="_blank" class="text-blue-600 underline font-bold">札幌螃蟹本家</a> (帝王蟹/松葉蟹)</li>
-                                <li>• <a href="https://www.google.com/maps/search/阿部蒲鉾店" target="_blank" class="text-blue-600 underline">阿部蒲鉾店</a> (炸魚板)</li>
                             </ul>
                         </div>
                         <div>
-                            <p class="font-bold text-emerald-700 mb-2 border-l-2 border-emerald-500 pl-2">藏王/山形：山形牛與在地味</p>
+                            <p class="font-bold text-emerald-700 mb-2 border-l-2 border-emerald-500 pl-2">藏王/山形：名產味</p>
                             <ul class="space-y-1 pl-2">
-                                <li>• <a href="https://www.google.com/maps/search/ろばた+山形牛" target="_blank" class="text-emerald-600 underline font-bold">ろばた</a>：**山形牛燒肉** / 成吉思汗</li>
+                                <li>• <a href="https://www.google.com/maps/search/ろばた+山形牛" target="_blank" class="text-emerald-600 underline font-bold">ろばた</a>：**山形牛燒肉**</li>
                                 <li>• <a href="https://www.google.com/maps/search/音茶屋" target="_blank" class="text-emerald-600 underline">音茶屋</a> / <a href="https://www.google.com/maps/search/山口餅屋" target="_blank" class="text-emerald-600 underline">山口餅屋</a></li>
-                                <li>• <a href="https://www.google.com/maps/search/三五郎小屋" target="_blank" class="text-emerald-600 underline">三五郎小屋</a> (雪場名店)</li>
                             </ul>
                         </div>
                         <div>
                             <p class="font-bold text-pink-700 mb-2 border-l-2 border-pink-500 pl-2">大阪：道頓堀與難波戰區</p>
                             <ul class="space-y-1 pl-2">
-                                <li>• <a href="https://www.google.com/maps/search/松阪牛燒肉M" target="_blank" class="text-pink-600 underline font-bold">松阪牛燒肉 M</a> (頂級燒肉)</li>
+                                <li>• <a href="https://www.google.com/maps/search/松阪牛燒肉M" target="_blank" class="text-pink-600 underline font-bold">松阪牛燒肉 M</a></li>
                                 <li>• <a href="https://www.google.com/maps/search/北むら+壽喜燒" target="_blank" class="text-pink-600 underline font-bold">北むら</a>：米其林 **壽喜燒**</li>
-                                <li>• <a href="https://www.google.com/maps/search/燃えよ麺助" target="_blank" class="text-pink-600 underline font-bold">燃えよ 麵助</a> (排隊拉麵)</li>
                                 <li>• <a href="https://www.google.com/maps/search/蟹道樂+道頓堀" target="_blank" class="text-pink-600 underline font-bold">蟹道樂</a> (螃蟹料理)</li>
-                                <li>• <a href="https://www.google.com/maps/search/北極星蛋包飯" target="_blank" class="text-pink-600 underline">北極星</a> / <a href="https://www.google.com/maps/search/味乃家+大阪燒" target="_blank" class="text-pink-600 underline">味乃家</a></li>
                             </ul>
                         </div>
                     </div>
@@ -422,16 +432,10 @@
                         <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
                     </summary>
                     <div class="p-4 border-t bg-gray-50">
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                            <a href="https://www.youtube.com/watch?v=MxgZz2Abc8k" target="_blank" class="bg-white p-3 rounded-xl shadow-sm text-center hover:bg-blue-50">
-                                <p class="text-xs font-bold">仙台</p>
-                            </a>
-                            <a href="https://www.youtube.com/channel/UC1xeTccsAQdz7-fF0eAa5HA" target="_blank" class="bg-white p-3 rounded-xl shadow-sm text-center hover:bg-blue-50">
-                                <p class="text-xs font-bold">藏王</p>
-                            </a>
-                            <a href="https://www.youtube.com/watch?v=1IB96p46tjE" target="_blank" class="bg-white p-3 rounded-xl shadow-sm text-center hover:bg-blue-50">
-                                <p class="text-xs font-bold">大阪難波</p>
-                            </a>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center text-xs">
+                            <a href="https://www.youtube.com/watch?v=MxgZz2Abc8k" target="_blank" class="bg-white p-3 rounded-xl shadow-sm hover:bg-blue-50 font-bold">仙台</a>
+                            <a href="https://www.youtube.com/channel/UC1xeTccsAQdz7-fF0eAa5HA" target="_blank" class="bg-white p-3 rounded-xl shadow-sm hover:bg-blue-50 font-bold">藏王</a>
+                            <a href="https://www.youtube.com/watch?v=1IB96p46tjE" target="_blank" class="bg-white p-3 rounded-xl shadow-sm hover:bg-blue-50 font-bold">大阪</a>
                         </div>
                     </div>
                 </details>
@@ -449,12 +453,8 @@
                         <span><i class="fas fa-credit-card mr-1 text-blue-500"></i> 信用卡建議策略</span>
                         <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <div class="p-4 border-t bg-white text-xs">
-                        <ul class="space-y-1">
-                            <li>• 玉山熊本熊卡：Suica儲值、藥妝</li>
-                            <li>• 國泰CUBE：餐廳、飯店、雪具</li>
-                            <li>• 星展eco卡：海外實體加碼</li>
-                        </ul>
+                    <div class="p-4 border-t bg-white text-xs space-y-1">
+                        <li>• 玉山熊本熊卡 / 國泰CUBE / 星展eco卡</li>
                     </div>
                 </details>
 
