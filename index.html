@@ -113,6 +113,9 @@
             <a href="#prep" onclick="smoothScroll(event, 'prep')" class="text-[10px] md:text-sm font-bold text-gray-600 flex flex-col items-center hover:text-blue-600 transition">
                 <i class="fas fa-clipboard-check mb-1 text-lg"></i>行前準備
             </a>
+            <a href="#references" onclick="smoothScroll(event, 'references')" class="text-[10px] md:text-sm font-bold text-gray-600 flex flex-col items-center hover:text-blue-600 transition">
+                <i class="fas fa-images mb-1 text-lg"></i>參考資料
+            </a>
         </div>
     </nav>
 
@@ -148,7 +151,8 @@
                             </div>
                         </div>
                         <div class="w-24 md:w-32 shrink-0">
-                            <img src="images/summary_tpe.jpg" alt="台北出發" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'">
+                            <img src="images/summary_tpe.jpg" alt="台北出發" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                            <p class="hidden text-[10px] text-gray-400 italic text-center">待上傳 (summary_tpe.jpg)</p>
                         </div>
                     </div>
 
@@ -163,7 +167,8 @@
                             </div>
                         </div>
                         <div class="w-24 md:w-32 shrink-0">
-                            <img src="images/summary_sendai.jpg" alt="仙台行程" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'">
+                            <img src="images/summary_sendai.jpg" alt="仙台行程" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                            <p class="hidden text-[10px] text-gray-400 italic text-center">待上傳 (summary_sendai.jpg)</p>
                         </div>
                     </div>
 
@@ -178,7 +183,8 @@
                             </div>
                         </div>
                         <div class="w-24 md:w-32 shrink-0">
-                            <img src="images/summary_zao.jpg" alt="藏王滑雪" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'">
+                            <img src="images/summary_zao.jpg" alt="藏王滑雪" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                            <p class="hidden text-[10px] text-gray-400 italic text-center">待上傳 (summary_zao.jpg)</p>
                         </div>
                     </div>
 
@@ -193,7 +199,8 @@
                             </div>
                         </div>
                         <div class="w-24 md:w-32 shrink-0">
-                            <img src="images/summary_osaka.jpg" alt="大阪行程" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'">
+                            <img src="images/summary_osaka.jpg" alt="大阪行程" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                            <p class="hidden text-[10px] text-gray-400 italic text-center">待上傳 (summary_osaka.jpg)</p>
                         </div>
                     </div>
 
@@ -208,7 +215,8 @@
                             </div>
                         </div>
                         <div class="w-24 md:w-32 shrink-0">
-                            <img src="images/summary_home.jpg" alt="返抵家門" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'">
+                            <img src="images/summary_home.jpg" alt="返抵家門" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                            <p class="hidden text-[10px] text-gray-400 italic text-center">待上傳 (summary_home.jpg)</p>
                         </div>
                     </div>
                 </div>
@@ -231,14 +239,66 @@
                 <div class="p-6 text-sm text-gray-600 min-h-[300px]">
                     <div id="day-1" class="day-content space-y-3">
                         <p class="font-bold text-blue-700 underline decoration-blue-200 decoration-2">2/09 (一) 飛往仙台與牛舌晚宴</p>
-                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-blue-500/20 ml-1 text-gray-600">
-                            <li>06:30 <a href="https://www.google.com/maps/search/?api=1&query=桃園國際機場" target="_blank" class="map-btn">TPE</a> → 15:55 <a href="https://www.google.com/maps/search/?api=1&query=仙台空港" target="_blank" class="map-btn">SDJ</a></li>
-                            <li><span class="font-bold text-blue-600">晚餐建議：</span><a href="https://www.google.com/maps/search/?api=1&query=牛舌善治郎+仙台站前本店" target="_blank" class="underline">牛舌善治郎 本店</a></li>
-                            <li>入住 <a href="https://www.google.com/maps/search/?api=1&query=Henn+na+Hotel+Sendai+Kokubuncho" target="_blank" class="map-btn">海茵娜飯店 仙台國分町</a></li>
+                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-blue-500/20 ml-1">
+                            <li>06:30 TPE → 15:55 SDJ <span class="status-tag status-open">正常</span></li>
+                            <li>晚餐建議：<a href="https://www.google.com/maps/search/?api=1&query=牛舌善治郎+仙台站前本店" target="_blank" class="underline">牛舌善治郎 本店</a></li>
+                            <li>入住 <a href="https://www.google.com/maps/search/?api=1&query=Henn+na+Hotel+Sendai+Kokubuncho" target="_blank" class="underline">海茵娜飯店 仙台國分町</a></li>
                             <li><span class="text-red-500 font-bold">必做：</span>晚餐後於仙台站超市買妥隔日早餐。</li>
                         </ul>
                     </div>
-                    <div id="day-2" class="day-content hidden italic text-gray-400">行程細節載入中...</div>
+                    <div id="day-2" class="day-content hidden space-y-3">
+                        <p class="font-bold text-emerald-700 underline decoration-emerald-200 decoration-2">2/10 (二) 藏王雪場體驗</p>
+                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-emerald-500/20 ml-1">
+                            <li>08:00 仙台站東口搭巴士 → 09:25 抵藏王</li>
+                            <li>入住 <a href="https://www.google.com/maps/search/?api=1&query=Sakaiya+Mori+no+Hotel+Waldberg" target="_blank" class="underline">Waldberg 堺屋飯店</a> (15:00 Check-in)</li>
+                            <li>租雪具：<a href="https://www.google.com/maps/search/?api=1&query=Skiing+Now+鬧雪具" target="_blank" class="italic font-bold">Skiing Now 閙雪具</a></li>
+                            <li>全家滑雪體驗 (單板/雙板)</li>
+                            <li>晚餐：<a href="https://www.google.com/maps/search/?api=1&query=Otochaya+Zao" target="_blank" class="underline">音茶屋</a></li>
+                        </ul>
+                    </div>
+                    <div id="day-3" class="day-content hidden space-y-3">
+                        <p class="font-bold text-amber-700 underline decoration-amber-200 decoration-2">2/11 (三) 樹冰奇景與水果補貨</p>
+                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-amber-500/20 ml-1">
+                            <li>08:00 前抵達纜車站 (08:30開始) <span class="status-tag status-warn">假日人潮</span></li>
+                            <li>漫步藏王溫泉街，享受足湯。</li>
+                            <li>16:30 巴士返仙台 → <a href="https://www.google.com/maps/search/?api=1&query=AEON+Sendai" target="_blank" class="underline">AEON 仙台</a> 採買水果。</li>
+                            <li>晚餐：<a href="https://www.google.com/maps/search/?api=1&query=札幌かに本家+仙台店" target="_blank" class="underline">札幌螃蟹本家</a> (需預約)</li>
+                        </ul>
+                    </div>
+                    <div id="day-4" class="day-content hidden space-y-3">
+                        <p class="font-bold text-purple-700 underline decoration-purple-200 decoration-2">2/12 (四) 聖地巡禮與青少年行程</p>
+                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-purple-500/20 ml-1">
+                            <li>前往仙台市體育館 <span class="status-tag status-closed">整修休館中</span> (外觀拍照)</li>
+                            <li>購物：Jump Shop、寶可夢中心、Joypolis VR。</li>
+                            <li>晚餐：<a href="https://www.google.com/maps/search/?api=1&query=肉十八+仙台駅前店" target="_blank" class="underline">肉十八 燒肉吃到飽</a> (預約制)</li>
+                        </ul>
+                    </div>
+                    <div id="day-5" class="day-content hidden space-y-3">
+                        <p class="font-bold text-slate-700 underline decoration-slate-200 decoration-2">2/13 (五) 伴手禮與前往大阪</p>
+                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-slate-500/20 ml-1">
+                            <li>08:00 仙台朝市買當季草莓。</li>
+                            <li>15:05 SDJ → 16:50 KIX</li>
+                            <li>入住 <a href="https://www.google.com/maps/search/?api=1&query=相鐵フレッサイン大阪なんば駅前" target="_blank" class="underline">大阪難波相鐵飯店</a></li>
+                        </ul>
+                    </div>
+                    <div id="day-6" class="day-content hidden space-y-3">
+                        <p class="font-bold text-pink-700 underline decoration-pink-200 decoration-2">2/14 (六) 大阪進階行程</p>
+                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-pink-500/20 ml-1">
+                            <li>行程：<a href="https://www.google.com/maps/search/?api=1&query=VS+PARK+ららぽーとEXPOCITY" target="_blank" class="underline">VS PARK (互動運動中心)</a>、日本橋 Animate。</li>
+                            <li>晚餐：<a href="https://www.google.com/maps/search/?api=1&query=Matsusakagyu+Yakiniku+M+Namba" target="_blank" class="underline">松阪牛燒肉 M</a> 或 <a href="https://www.google.com/maps/search/?api=1&query=すき焼き北むら" target="_blank" class="underline">北むら壽喜燒</a></li>
+                        </ul>
+                    </div>
+                    <div id="day-7" class="day-content hidden space-y-4">
+                        <p class="font-bold text-gray-700 underline decoration-gray-200 decoration-2">2/15 (日) 分流搭機返台</p>
+                        <div class="border-l-4 border-orange-500 pl-3 bg-orange-50 p-2 rounded-r-xl">
+                            <p class="font-bold text-orange-600 text-xs">一人提早行程 (BR131)：</p>
+                            <ul class="text-[10px] mt-1"><li>09:30 前往 KIX ＞ 12:55 登機返台。</li></ul>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-3 bg-blue-50 p-2 rounded-r-xl">
+                            <p class="font-bold text-blue-600 text-xs">其餘成員行程 (BR129)：</p>
+                            <ul class="text-[10px] mt-1"><li>大阪採買 ＞ 15:30 前往 KIX ＞ 18:10 登機返台。</li></ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -246,7 +306,34 @@
         <section id="expenses" class="anchor-section">
             <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center border-l-4 border-yellow-500 pl-3">費用統計明細 (3大1小)</h2>
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-                <div class="p-4 text-center text-[10px] text-gray-400">預計現場支付日幣總計約 ¥194,400</div>
+                <div class="overflow-x-auto no-scrollbar">
+                    <table class="w-full text-left table-fixed border-collapse">
+                        <thead class="bg-gray-100 border-b text-gray-600">
+                            <tr>
+                                <th class="w-[35%] p-4 font-bold text-[11px]">分類 / 項目</th>
+                                <th class="w-[20%] p-4 font-bold text-center text-[11px]">大人 (x3)</th>
+                                <th class="w-[20%] p-4 font-bold text-center text-[11px]">小孩 (x1)</th>
+                                <th class="w-[25%] p-4 font-bold text-right text-[11px]">小計</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 text-[11px]">
+                            <tr class="bg-blue-600 text-white font-bold"><td colspan="4" class="px-4 py-1">【 住行預算 】</td></tr>
+                            <tr><td class="p-4">台日機票 (已付)</td><td colspan="3" class="p-4 text-right font-bold text-emerald-600">TWD 76,601</td></tr>
+                            <tr><td class="p-4">仙台海茵娜 (已付)</td><td colspan="3" class="p-4 text-right font-bold text-emerald-600">TWD 12,336</td></tr>
+                            <tr><td class="p-4">大阪相鐵 (已付)</td><td colspan="3" class="p-4 text-right font-bold text-emerald-600">TWD 14,057</td></tr>
+                            <tr class="bg-blue-50/30"><td class="p-4">藏王 Waldberg</td><td colspan="2" class="p-4 text-center">日幣支付</td><td class="p-4 text-right font-bold">¥56,040</td></tr>
+                            <tr><td class="p-4">機場交通費 (估)</td><td class="p-4 text-center">¥3,260</td><td class="p-4 text-center">¥1,640</td><td class="p-4 text-right font-bold">¥11,420</td></tr>
+                            <tr><td class="p-4 font-bold text-blue-800">山交巴士來回</td><td class="p-4 text-center">¥5,000</td><td class="p-4 text-center">¥2,500</td><td class="p-4 text-right font-bold">¥17,500</td></tr>
+                            <tr class="bg-emerald-600 text-white font-bold"><td colspan="4" class="px-4 py-1">【 滑雪與活動 】</td></tr>
+                            <tr class="bg-emerald-50/10"><td class="p-4 font-bold">滑雪票/租借 (2日)</td><td class="p-4 text-center">¥24,800</td><td class="p-4 text-center">¥15,640</td><td class="p-4 text-right font-bold">¥90,040</td></tr>
+                            <tr><td class="p-4">樹冰纜車+優先券</td><td class="p-4 text-center">¥5,400</td><td class="p-4 text-center">¥3,200</td><td class="p-4 text-right font-bold">¥19,400</td></tr>
+                        </tbody>
+                        <tfoot class="bg-gray-800 text-white font-bold">
+                            <tr><td colspan="3" class="p-4 text-center text-[10px] italic">現場支付日幣總計</td><td class="p-4 text-right text-yellow-400 text-lg price-font">約 ¥194,400</td></tr>
+                            <tr class="bg-gray-900"><td colspan="3" class="p-4 text-center text-[11px] border-t border-gray-700">台幣總計 (估)</td><td class="p-4 text-right text-emerald-400 text-lg price-font border-t border-gray-700">約 TWD 144,790</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
         </section>
 
@@ -254,13 +341,33 @@
             <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center border-l-4 border-green-500 pl-3">行李檢查清單</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-[11px] text-gray-600">
                 <div class="bg-blue-50/30 p-5 rounded-3xl shadow border border-blue-100">
-                    <h4 class="font-bold text-blue-800 mb-3 border-b pb-2 flex items-center"><i class="fas fa-skiing mr-2"></i>滑雪與雪地裝備</h4>
+                    <h4 class="font-bold text-blue-800 mb-3 border-b pb-2 flex items-center"><i class="fas fa-skiing mr-2"></i>雪地與滑雪裝備</h4>
                     <ul class="space-y-2">
                         <li><input type="checkbox"> <span class="text-blue-600 font-bold">排汗衣 / 雪衣 / 雪褲</span></li>
                         <li><input type="checkbox"> <span class="text-blue-600 font-bold">毛帽 / 脖圍 / 手套</span></li>
+                        <li><input type="checkbox"> 防水防滑雪靴 / 厚羊毛襪</li>
+                        <li><input type="checkbox"> 暖暖包 (貼式/握式皆備)</li>
                     </ul>
                 </div>
+                <div class="bg-white p-5 rounded-3xl shadow border border-gray-100">
+                    <h4 class="font-bold text-gray-800 mb-3 border-b pb-2 flex items-center"><i class="fas fa-id-card mr-2 text-blue-400"></i>重要證件與電子</h4>
+                    <ul class="space-y-2">
+                        <li><input type="checkbox"> 護照 / VJW 截圖 / 信用卡</li>
+                        <li><input type="checkbox"> 手機 / 相機 / 行動電源 / 充電線</li>
+                        <li><input type="checkbox"> 萬用轉接頭 / insta360 / ACE / air tag</li>
+                        <li><input type="checkbox"> ESIM 或漫遊確認 / 日幣現金</li>
+                    </ul>
                 </div>
+                <div class="bg-white p-5 rounded-3xl shadow border border-gray-100">
+                    <h4 class="font-bold text-gray-800 mb-3 border-b pb-2 flex items-center"><i class="fas fa-first-aid mr-2 text-red-400"></i>生活與醫藥</h4>
+                    <ul class="space-y-2">
+                        <li><input type="checkbox"> 常備藥 (止痛/胃藥/OK蹦)</li>
+                        <li><input type="checkbox"> 護唇膏 / 高保濕乳液</li>
+                        <li><input type="checkbox"> 濕紙巾 / 乾洗手 / 摺疊雨傘</li>
+                        <li><input type="checkbox"> 便攜晾衣繩 / 洗衣膠囊</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section id="prep" class="anchor-section">
@@ -276,7 +383,8 @@
                             <div class="bg-white p-4 rounded-2xl border border-blue-100 text-[9px] font-bold">去程 2/10 08:00 仙台站</div>
                             <div class="bg-white p-4 rounded-2xl border border-emerald-100 text-[9px] font-bold">回程 2/11 16:30 藏王</div>
                         </div>
-                        <img src="images/bus_booking.jpg" alt="巴士預訂憑證" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'">
+                        <img src="images/bus_booking.jpg" alt="巴士預訂憑證" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <p class="hidden text-[10px] text-gray-400 text-center mt-2 italic">待上傳 (bus_booking.jpg)</p>
                     </div>
                 </details>
                 <details class="bg-white rounded-3xl border border-gray-100 shadow-sm group overflow-hidden">
@@ -285,8 +393,8 @@
                         <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
                     </summary>
                     <div class="px-6 pb-6">
-                        <img src="images/insurance.jpg" alt="旅遊保險單" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'">
-                        <p class="text-[10px] text-gray-400 text-center mt-2 italic">尚未上傳 (insurance.jpg)</p>
+                        <img src="images/insurance.jpg" alt="旅遊保險單" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <p class="hidden text-[10px] text-gray-400 text-center mt-2 italic">待上傳 (insurance.jpg)</p>
                     </div>
                 </details>
                 <details class="bg-white rounded-3xl border border-gray-100 shadow-sm group overflow-hidden">
@@ -294,9 +402,9 @@
                         <span><i class="fas fa-sim-card mr-2 text-emerald-500"></i>待處理 eSIM</span>
                         <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <div class="px-6 pb-6">
-                        <img src="images/esim.jpg" alt="eSIM 憑證" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'">
-                        <p class="text-[10px] text-gray-400 text-center mt-2 italic">尚未上傳 (esim.jpg)</p>
+                    <div class="px-6 pb-6 text-center">
+                        <img src="images/esim.jpg" alt="eSIM 憑證" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <p class="hidden text-[10px] text-gray-400 italic text-center">待上傳 (esim.jpg)</p>
                     </div>
                 </details>
             </div>
@@ -305,6 +413,21 @@
         <section id="references" class="anchor-section pb-12">
             <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center border-l-4 border-gray-400 pl-3">參考資料</h2>
             <div class="space-y-4">
+                
+                <details class="bg-white rounded-2xl border border-gray-200 overflow-hidden group">
+                    <summary class="p-4 font-bold cursor-pointer hover:bg-gray-50 flex justify-between items-center text-gray-600 text-sm">
+                        <span><i class="fas fa-cloud-sun mr-1 text-emerald-500"></i> 當地天氣預報 (tenki.jp)</span>
+                        <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="p-4 border-t bg-white">
+                        <div class="flex flex-wrap gap-2">
+                            <a href="https://tenki.jp/forecast/2/7/3410/4100/10days.html" target="_blank" class="flex-1 min-w-[100px] py-2 px-3 bg-gray-50 rounded-lg text-center text-xs font-bold hover:bg-emerald-50">仙台市區</a>
+                            <a href="https://tenki.jp/forecast/2/9/3510/6201/10days.html" target="_blank" class="flex-1 min-w-[100px] py-2 px-3 bg-gray-50 rounded-lg text-center text-xs font-bold hover:bg-emerald-50">藏王樹冰</a>
+                            <a href="https://tenki.jp/forecast/6/30/6200/27128/10days.html" target="_blank" class="flex-1 min-w-[100px] py-2 px-3 bg-gray-50 rounded-lg text-center text-xs font-bold hover:bg-emerald-50">大阪難波</a>
+                        </div>
+                    </div>
+                </details>
+
                 <details class="bg-white rounded-2xl border border-gray-200 overflow-hidden group">
                     <summary class="p-4 font-bold cursor-pointer hover:bg-gray-50 flex justify-between items-center text-gray-600 text-sm">
                         <span><i class="fas fa-shopping-cart mr-1 text-pink-500"></i> 購物清單</span>
@@ -315,7 +438,52 @@
                             <label class="flex items-center gap-2"><input type="checkbox"> 無印：螢光筆、underwear</label>
                             <label class="flex items-center gap-2"><input type="checkbox"> 藥妝：洗面乳 / 超市：昆布鹽</label>
                         </div>
-                        <img src="images/shopping_list.jpg" alt="購物清單圖示" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'">
+                        <img src="images/shopping_list.jpg" alt="購物清單圖示" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <p class="hidden text-[10px] text-gray-400 text-center mt-2 italic">待上傳 (shopping_list.jpg)</p>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-2xl border border-gray-200 overflow-hidden group">
+                    <summary class="p-4 font-bold cursor-pointer hover:bg-gray-50 flex justify-between items-center text-gray-600 text-sm">
+                        <span><i class="fas fa-utensils mr-1 text-orange-500"></i> 美食推薦 (近一年精選)</span>
+                        <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="p-4 border-t bg-white text-[11px] space-y-4">
+                        <div>
+                            <p class="font-bold text-blue-700 mb-2 border-l-2 border-blue-500 pl-2">仙台：名物與當地牛</p>
+                            <ul class="space-y-1 pl-2">
+                                <li>• <a href="https://www.google.com/maps/search/旨味太助" target="_blank" class="text-blue-600 underline">旨味太助</a> / 牛舌 閣</li>
+                                <li>• 仔虎：頂級 **仙台牛燒肉**</li>
+                                <li>• 末廣拉麵本福 / 札幌螃蟹本家 (螃蟹)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold text-emerald-700 mb-2 border-l-2 border-emerald-500 pl-2">藏王/山形：名產味</p>
+                            <ul class="space-y-1 pl-2">
+                                <li>• ろばた：**山形牛燒肉** / 音茶屋 / 山口餅屋</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold text-pink-700 mb-2 border-l-2 border-pink-500 pl-2">大阪：名物店家</p>
+                            <ul class="space-y-1 pl-2">
+                                <li>• 松阪牛燒肉 M / 北むら：**壽喜燒**</li>
+                                <li>• 燃えよ 麵助 / 蟹道樂 / 北極星 / 味乃家</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-2xl border border-gray-200 overflow-hidden group">
+                    <summary class="p-4 font-bold cursor-pointer hover:bg-gray-50 flex justify-between items-center text-gray-600 text-sm">
+                        <span><i class="fas fa-video mr-1 text-red-400"></i> 即時影像 Live Webcam</span>
+                        <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="p-4 border-t bg-gray-50">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center text-xs">
+                            <a href="https://www.youtube.com/watch?v=MxgZz2Abc8k" target="_blank" class="bg-white p-3 rounded-xl shadow-sm hover:bg-blue-50 font-bold">仙台</a>
+                            <a href="https://www.youtube.com/channel/UC1xeTccsAQdz7-fF0eAa5HA" target="_blank" class="bg-white p-3 rounded-xl shadow-sm hover:bg-blue-50 font-bold">藏王</a>
+                            <a href="https://www.youtube.com/watch?v=1IB96p46tjE" target="_blank" class="bg-white p-3 rounded-xl shadow-sm hover:bg-blue-50 font-bold">大阪</a>
+                        </div>
                     </div>
                 </details>
 
@@ -324,11 +492,26 @@
                         <span><i class="fas fa-skiing mr-1 text-amber-400"></i> 雪具租賃價目表</span>
                         <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <div class="p-4 border-t bg-gray-50">
-                        <img src="images/ski_rental.jpg" alt="雪具租賃" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'">
+                    <div class="p-4 border-t bg-gray-50 text-center">
+                        <img src="images/ski_rental.jpg" alt="雪具租賃" class="rounded-xl shadow-md max-w-full h-auto mx-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <p class="hidden text-[10px] text-gray-400 italic">待上傳 (ski_rental.jpg)</p>
                     </div>
                 </details>
-                </div>
+
+                <details class="bg-white rounded-2xl border border-gray-200 overflow-hidden group">
+                    <summary class="p-4 font-bold cursor-pointer hover:bg-gray-50 flex justify-between items-center text-gray-600 text-sm">
+                        <span><i class="fas fa-credit-card mr-1 text-blue-500"></i> 信用卡建議策略</span>
+                        <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="p-4 border-t bg-white text-xs">
+                        <ul class="space-y-1">
+                            <li>• 玉山熊本熊卡：Suica儲值、藥妝</li>
+                            <li>• 國泰CUBE：餐廳、飯店、雪具</li>
+                            <li>• 星展eco卡：海外實體加碼</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
         </section>
 
     </main>
