@@ -589,6 +589,13 @@
     </footer>
 
     <script>
+        // --- 新增：強制重新整理後回到頁面最上方 ---
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual'; // 禁止瀏覽器自動恢復捲動位置
+        }
+        window.scrollTo(0, 0); // 強制捲動至座標 (0,0)
+        // --------------------------------------
+
         function smoothScroll(event, targetId) {
             event.preventDefault();
             const targetElement = document.getElementById(targetId);
@@ -611,6 +618,5 @@
             activeBtn.classList.remove('text-gray-400');
         }
     </script>
-
 </body>
 </html>
