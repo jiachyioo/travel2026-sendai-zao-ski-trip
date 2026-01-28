@@ -589,15 +589,14 @@
     </footer>
 
     <script>
-        // 強制 Reload 後回到最頂端
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
+        // --- 新增：強制重新整理時回到最上方 ---
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual'; // 告訴瀏覽器不要自動恢復捲動位置
         }
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                window.scrollTo(0, 0);
-            }, 10);
-        });
+        window.onload = function() {
+            window.scrollTo(0, 0); // 確保載入完成後在頂部
+        };
+        // ------------------------------------
 
         function smoothScroll(event, targetId) {
             event.preventDefault();
