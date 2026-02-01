@@ -92,6 +92,12 @@
             border-radius: 12px;
             border: 1px dashed #cbd5e1;
         }
+
+        /* 購物表格專用樣式 */
+        .shop-table th { background-color: #f1f5f9; color: #475569; font-size: 10px; font-weight: 700; text-align: center; }
+        .shop-table td { font-size: 10px; padding: 10px 4px; vertical-align: middle; }
+        .discount-text { color: #e11d48; font-weight: bold; }
+        .tw-price { color: #64748b; font-style: italic; }
     </style>
 </head>
 <body class="pb-20">
@@ -112,6 +118,9 @@
             </a>
             <a href="#prep" onclick="smoothScroll(event, 'prep')" class="text-[10px] md:text-sm font-bold text-gray-600 flex flex-col items-center hover:text-blue-600 transition">
                 <i class="fas fa-clipboard-check mb-1 text-lg"></i>行前準備
+            </a>
+            <a href="#shopping" onclick="smoothScroll(event, 'shopping')" class="text-[10px] md:text-sm font-bold text-gray-600 flex flex-col items-center hover:text-blue-600 transition">
+                <i class="fas fa-shopping-bag mb-1 text-lg"></i>購物清單
             </a>
             <a href="#references" onclick="smoothScroll(event, 'references')" class="text-[10px] md:text-sm font-bold text-gray-600 flex flex-col items-center hover:text-blue-600 transition">
                 <i class="fas fa-images mb-1 text-lg"></i>參考資料
@@ -307,7 +316,7 @@
                     <div id="day-6" class="day-content hidden space-y-3">
                         <p class="font-bold text-pink-700 underline decoration-pink-200 decoration-2">2/14 (六) 大阪進階行程 (青少年推薦)</p>
                         <ul class="list-disc pl-5 space-y-2 border-l-4 border-pink-500/20 ml-1 text-gray-600">
-                            <li>行程：<a href="https://www.google.com/maps/search/?api=1&query=VS+PARK+ららぽーとEXPOCITY" target="_blank" class="underline font-bold text-pink-600">VS PARK (互動運動中心)</a>、<a href="https://www.google.com/maps/search/?api=1&query=アニメイト大阪日本橋" target="_blank" class="underline font-bold text-pink-600">日本橋 Animate (關西最大)</a></li>
+                            <li>行程：<a href="https://www.google.com/maps/search/?api=1&query=VS+PARK+ららぽー補給站" target="_blank" class="underline font-bold text-pink-600">VS PARK (互動運動中心)</a>、<a href="https://www.google.com/maps/search/?api=1&query=アニメイト大阪日本橋" target="_blank" class="underline font-bold text-pink-600">日本橋 Animate (關西最大)</a></li>
                             <li>晚餐建議：<a href="https://www.google.com/maps/search/?api=1&query=Matsusakagyu+Yakiniku+M+Namba" target="_blank" class="underline">松阪牛燒肉 M</a> 或 <a href="https://www.google.com/maps/search/?api=1&query=すき焼き北むら" target="_blank" class="underline">北むら壽喜燒</a></li>
                         </ul>
                         <div class="ref-attractions">
@@ -407,7 +416,7 @@
                         <li><input type="checkbox"> <span class="text-blue-600 font-bold">排汗衣</span></li>
                         <li><input type="checkbox"> <span class="text-blue-600 font-bold">雪衣 / 雪褲</span></li>
                         <li><input type="checkbox"> <span class="text-blue-600 font-bold">毛帽</span> / <span class="text-blue-600 font-bold">脖圍</span></li>
-                        <li><input type="checkbox"> <span class="text-blue-600 font-bold">口罩</span> / 滑雪手套</li>
+                        <li><input type="checkbox"> <span class="text-blue-600 font-bold">口罩</span> / 滑雪手愛</li>
                         <li><input type="checkbox"> <span class="text-blue-600 font-bold">便攜曬衣架</span></li>
                         <li><input type="checkbox"> 防水防滑雪靴 / 厚羊毛襪</li>
                         <li><input type="checkbox"> 暖暖包 (貼式/握式皆備)</li>
@@ -475,6 +484,378 @@
             </div>
         </section>
 
+        <!-- 購物清單區塊 -->
+        <section id="shopping" class="anchor-section">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center border-l-4 border-pink-500 pl-3">購物清單</h2>
+            <div class="space-y-4">
+                <details class="bg-white rounded-3xl border border-gray-100 shadow-sm group overflow-hidden">
+                    <summary class="p-6 font-bold cursor-pointer flex justify-between items-center text-gray-800 text-sm">
+                        <span><i class="fas fa-store mr-2 text-red-400"></i>無印良品</span>
+                        <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-6 pb-6 space-y-4">
+                        <p class="text-xs text-gray-600">螢光筆、underwear（Ｍ）、壁掛架、草莓巧克力、冷泡茶包、磁吸計時器</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <img src="images/shopping_muji_1.jpg" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                <p class="hidden text-[10px] text-gray-400 italic">待上傳 (shopping_muji_1.jpg)</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="images/shopping_muji_2.jpg" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                <p class="hidden text-[10px] text-gray-400 italic">待上傳 (shopping_muji_2.jpg)</p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-3xl border border-gray-100 shadow-sm group overflow-hidden">
+                    <summary class="p-6 font-bold cursor-pointer flex justify-between items-center text-gray-800 text-sm">
+                        <span><i class="fas fa-building mr-2 text-blue-400"></i>大阪高島屋：肌膚之鑰(1F)、茅乃舍(B1F)、小倉山莊(B1F)</span>
+                        <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-6 pb-6 space-y-6">
+                        <div class="p-3 bg-pink-50 rounded-xl border border-pink-100">
+                            <p class="text-[11px] font-bold text-pink-700 leading-relaxed"><i class="fas fa-info-circle mr-1"></i>折扣說明：結帳前先領取 Guest Card (5% 優惠)，最終退稅約 8.4% (扣除手續費)。</p>
+                        </div>
+                        
+                        <!-- 肌膚之鑰表格 -->
+                        <div class="overflow-x-auto">
+                            <p class="text-xs font-bold mb-2 text-blue-800 border-l-4 border-blue-400 pl-2">肌膚之鑰 (CPB) 1F</p>
+                            <table class="w-full text-left shop-table border border-gray-100">
+                                <thead>
+                                    <tr>
+                                        <th class="w-[35%]">品項 (中/日/備註)</th>
+                                        <th class="w-[10%]">數量</th>
+                                        <th class="w-[15%]">日本原價</th>
+                                        <th class="w-[15%]">折後預估</th>
+                                        <th class="w-[15%]">台灣價</th>
+                                        <th class="w-[10%]">連結</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-50">
+                                    <tr>
+                                        <td class="leading-relaxed">
+                                            光采無瑕妝前凝霜 (造光霜)<br>
+                                            <span class="text-[9px] font-bold text-blue-600 tracking-tighter">ヴォワールコレクチュールｎ</span>
+                                        </td>
+                                        <td class="text-center font-bold">2本</td>
+                                        <td class="text-center">¥8,250</td>
+                                        <td class="text-center discount-text">¥7,125</td>
+                                        <td class="text-center tw-price">NT$2,100</td>
+                                        <td class="text-center"><a href="https://www.cledepeau-beaute.com/jp/4514254212066.html" target="_blank" class="text-blue-500 underline">官網</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="leading-relaxed">
+                                            美白粉餅 (粉蕊) <span class="text-pink-600 font-bold">ピンクオークル10</span><br>
+                                            <span class="text-[9px] font-bold text-blue-600 tracking-tighter">タンナチュレールプードルブラン レフィル</span><br>
+                                            <span class="text-[8px] bg-yellow-100 text-red-600">※レフィル（Refill）のみ</span>
+                                        </td>
+                                        <td class="text-center font-bold">2個</td>
+                                        <td class="text-center">¥10,450</td>
+                                        <td class="text-center discount-text">¥9,025</td>
+                                        <td class="text-center tw-price">NT$2,100</td>
+                                        <td class="text-center"><a href="https://www.cledepeau-beaute.com/jp/155301.html" target="_blank" class="text-blue-500 underline">官網</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="leading-relaxed">
+                                            恆潤光采粉餅刷<br>
+                                            <span class="text-[9px] font-bold text-blue-600 tracking-tighter">パンソー（タンプードルエクラ）</span>
+                                        </td>
+                                        <td class="text-center font-bold">1本</td>
+                                        <td class="text-center">¥2,750</td>
+                                        <td class="text-center discount-text">¥2,375</td>
+                                        <td class="text-center tw-price">NT$800</td>
+                                        <td class="text-center"><a href="https://www.cledepeau-beaute.com/jp/4514254200155.html" target="_blank" class="text-blue-500 underline">官網</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 茅乃舍表格 -->
+                        <div class="overflow-x-auto">
+                            <p class="text-xs font-bold mb-2 text-emerald-800 border-l-4 border-emerald-400 pl-2">茅乃舍 B1F</p>
+                            <table class="w-full text-left shop-table border border-gray-100">
+                                <thead>
+                                    <tr>
+                                        <th>品項 (中/日)</th>
+                                        <th>規格</th>
+                                        <th>日本原價</th>
+                                        <th>折後預估</th>
+                                        <th>台灣價</th>
+                                        <th>連結</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-50">
+                                    <tr>
+                                        <td>黃金比例高湯 / 茅乃舍だし</td>
+                                        <td class="text-center">8g × 30袋</td>
+                                        <td class="text-center">¥2,160</td>
+                                        <td class="text-center discount-text">¥1,880</td>
+                                        <td class="text-center tw-price">~NT$650</td>
+                                        <td class="text-center"><a href="https://www.kubara.jp/item/search/%E8%8C%82%E4%B9%83%E8%88%8E%E3%81%A0%E3%81%97/?sid=4" target="_blank" class="text-blue-500 underline">官網</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>小魚乾高湯 / 煮干しだし</td>
+                                        <td class="text-center">8g × 30袋</td>
+                                        <td class="text-center">¥2,160</td>
+                                        <td class="text-center discount-text">¥1,880</td>
+                                        <td class="text-center tw-price">~NT$650</td>
+                                        <td class="text-center"><a href="https://www.kubara.jp/item/search/%E7%85%AE%E5%B9%B2%E3%81%97%E3%81%A0%E3%81%97/?sid=4" target="_blank" class="text-blue-500 underline">官網</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>蝦味高湯 / 海老だし</td>
+                                        <td class="text-center">8g × 20袋</td>
+                                        <td class="text-center">¥2,376</td>
+                                        <td class="text-center discount-text">¥2,067</td>
+                                        <td class="text-center tw-price">~NT$750</td>
+                                        <td class="text-center"><a href="https://www.kubara.jp/item/search/%E6%B5%B7%E8%80%81%E3%81%A0%E3%81%97/?sid=4" target="_blank" class="text-blue-500 underline">官網</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>胡麻豆乳味噌鍋 / 胡麻豆乳鍋</td>
+                                        <td class="text-center">1人份 × 2回</td>
+                                        <td class="text-center">¥648</td>
+                                        <td class="text-center discount-text">¥563</td>
+                                        <td class="text-center tw-price">~NT$250</td>
+                                        <td class="text-center"><a href="https://www.kubara.jp/item/search/%E8%83%A1%E9%BA%BB%E8%B1%86%E4%B9%B3%E9%8D%8B/?sid=4" target="_blank" class="text-blue-500 underline">官網</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>柚子鹽鍋 / 柚子塩鍋</td>
+                                        <td class="text-center">1人份 × 2回</td>
+                                        <td class="text-center">¥648</td>
+                                        <td class="text-center discount-text">¥563</td>
+                                        <td class="text-center tw-price">~NT$250</td>
+                                        <td class="text-center"><a href="https://www.kubara.jp/item/search/%E6%9F%9A%E5%AD%90%E5%A1%A9%E9%8D%8B/?sid=4" target="_blank" class="text-blue-500 underline">官網</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 小倉山莊：嵯峨乃燒 (鹹甜) -->
+                        <div class="overflow-x-auto">
+                            <p class="text-xs font-bold mb-2 text-amber-800 border-l-4 border-amber-400 pl-2">小倉山莊 (嵯峨乃燒：鹹甜) B1F</p>
+                            <table class="w-full text-left shop-table border border-gray-100">
+                                <thead>
+                                    <tr>
+                                        <th class="w-[25%]">系列規格</th>
+                                        <th class="w-[25%]">內容 (2枚入)</th>
+                                        <th class="w-[20%]">日本含稅價</th>
+                                        <th class="w-[20%]">折後預估</th>
+                                        <th class="w-[10%]">連結</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-50">
+                                    <tr class="bg-gray-50/50"><td colspan="5" class="p-2 font-bold text-gray-500">【鐵盒/紙盒裝 - 正式送禮】</td></tr>
+                                    <tr>
+                                        <td>大缶 (鐵盒)</td>
+                                        <td class="text-center font-medium text-blue-800">32袋 (共64枚)</td>
+                                        <td class="text-center">¥3,348</td>
+                                        <td class="text-center discount-text">¥2,912</td>
+                                        <td class="text-center" rowspan="7"><a href="https://www.ogurasansou.co.jp/shop/c/c1025/?srsltid=AfmBOoo3ZEhTKh6npMtf4qkzGHFxK-HDtRkWURXnFzuN5fUYeTPy9RLs" target="_blank" class="text-blue-500 underline font-bold">官網</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>中缶 (鐵盒)</td>
+                                        <td class="text-center">21袋 (共42枚)</td>
+                                        <td class="text-center">¥2,268</td>
+                                        <td class="text-center discount-text">¥1,973</td>
+                                    </tr>
+                                    <tr>
+                                        <td>小缶 (鐵盒)</td>
+                                        <td class="text-center">15袋 (共30枚)</td>
+                                        <td class="text-center">¥1,728</td>
+                                        <td class="text-center discount-text">¥1,503</td>
+                                    </tr>
+                                    <tr>
+                                        <td>化粧箱 (大)</td>
+                                        <td class="text-center">11袋 (共22枚)</td>
+                                        <td class="text-center">¥1,188</td>
+                                        <td class="text-center discount-text">¥1,033</td>
+                                    </tr>
+                                    <tr>
+                                        <td>化粧箱 (小)</td>
+                                        <td class="text-center">6袋 (共12枚)</td>
+                                        <td class="text-center">¥702</td>
+                                        <td class="text-center discount-text">¥610</td>
+                                    </tr>
+                                    <tr class="bg-gray-50/50"><td colspan="2" class="p-2 font-bold text-gray-500">【塑膠袋裝 - 經濟自用】</td><td colspan="3"></td></tr>
+                                    <tr>
+                                        <td class="font-bold">詰め替え袋 (補充包)</td>
+                                        <td class="text-center font-bold text-emerald-600 tracking-tighter">21袋 (共42枚)</td>
+                                        <td class="text-center font-bold">¥1,512</td>
+                                        <td class="text-center discount-text">¥1,315</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold">ご愛用袋</td>
+                                        <td class="text-center">9袋 (共18枚)</td>
+                                        <td class="text-center">¥692</td>
+                                        <td class="text-center discount-text">¥602</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 小倉山莊：和三盆 (純甜) -->
+                        <div class="overflow-x-auto">
+                            <p class="text-xs font-bold mb-2 text-yellow-800 border-l-4 border-yellow-500 pl-2">小倉山莊 (定家の月：和三盆純甜) B1F</p>
+                            <table class="w-full text-left shop-table border border-gray-100">
+                                <thead>
+                                    <tr>
+                                        <th class="w-[25%]">系列規格</th>
+                                        <th class="w-[25%]">內容 (3枚入)</th>
+                                        <th class="w-[20%]">日本含稅價</th>
+                                        <th class="w-[20%]">折後預估</th>
+                                        <th class="w-[10%]">連結</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-50">
+                                    <tr>
+                                        <td>大缶 (鐵盒)</td>
+                                        <td class="text-center font-medium text-blue-800">19袋 (共57枚)</td>
+                                        <td class="text-center">¥2,376</td>
+                                        <td class="text-center discount-text">¥2,067</td>
+                                        <td class="text-center" rowspan="5"><a href="https://www.ogurasansou.co.jp/shop/goods/search.aspx?search=x&keyword=%E5%AE%9A%E5%AE%B6%E3%81%AE%E6%9C%88&search=search" target="_blank" class="text-blue-500 underline font-bold">官網</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>中缶 (鐵盒)</td>
+                                        <td class="text-center">13袋 (共39枚)</td>
+                                        <td class="text-center">¥1,728</td>
+                                        <td class="text-center discount-text">¥1,503</td>
+                                    </tr>
+                                    <tr>
+                                        <td>小缶 (鐵盒)</td>
+                                        <td class="text-center">9袋 (共27枚)</td>
+                                        <td class="text-center">¥1,188</td>
+                                        <td class="text-center discount-text">¥1,033</td>
+                                    </tr>
+                                    <tr>
+                                        <td>化粧箱 (紙盒)</td>
+                                        <td class="text-center text-emerald-600">7袋 (共21枚)</td>
+                                        <td class="text-center">¥864</td>
+                                        <td class="text-center discount-text">¥752</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold">ご愛用袋 (袋裝)</td>
+                                        <td class="text-center">5袋 (共15枚)</td>
+                                        <td class="text-center">¥648</td>
+                                        <td class="text-center discount-text">¥563</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 購買筆記 -->
+                        <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200">
+                            <p class="text-xs font-bold text-gray-700 mb-3"><i class="fas fa-lightbulb mr-2 text-yellow-500"></i>小倉山莊：購買筆記與建議</p>
+                            <ul class="text-[10px] space-y-3 text-gray-600">
+                                <li>
+                                    <strong class="text-blue-700">● 口味選擇建議：</strong><br>
+                                    如果您喜歡蜂蜜醬油與海苔的層次感，請主攻 <span class="font-bold">「嵯峨乃燒」</span>(店內 No.1)。如果您偏好純淨糖霜的甜味，請選擇 <span class="font-bold">「和三盆」</span>。
+                                </li>
+                                <li>
+                                    <strong class="text-emerald-700">● 行李空間配置：</strong><br>
+                                    正式送禮選「鐵盒」，一般送禮選「化粧箱 (紙盒)」。若是自家囤貨，強烈推薦買 <span class="font-bold">「補充包」或「ご愛用袋」</span>，體積小、重量輕且 CP 值最高。
+                                </li>
+                                <li>
+                                    <strong class="text-red-700">● 現場貼心提醒：</strong><br>
+                                    結帳前先憑護照去高島屋服務台領取 <span class="font-bold text-red-600">Guest Card (5% OFF)</span>。結帳時可主動告知櫃姐分送對象數量，索取適當數量的小提袋。
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <img src="images/shopping_takashimaya_1.jpg" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                <p class="hidden text-[10px] text-gray-400 italic">待上傳 (shopping_takashimaya_1.jpg)</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="images/shopping_takashimaya_2.jpg" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                <p class="hidden text-[10px] text-gray-400 italic">待上傳 (shopping_takashimaya_2.jpg)</p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-3xl border border-gray-100 shadow-sm group overflow-hidden">
+                    <summary class="p-6 font-bold cursor-pointer flex justify-between items-center text-gray-800 text-sm">
+                        <span><i class="fas fa-coffee mr-2 text-green-400"></i>全家或7-11</span>
+                        <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-6 pb-6 space-y-4">
+                        <p class="text-xs text-gray-600">零食、emina 起司甜點 (Cheese Dessert)</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <img src="images/shopping_cvs_1.jpg" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                <p class="hidden text-[10px] text-gray-400 italic">待上傳 (shopping_cvs_1.jpg)</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="images/shopping_cvs_2.jpg" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                <p class="hidden text-[10px] text-gray-400 italic">待上傳 (shopping_cvs_2.jpg)</p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-3xl border border-gray-100 shadow-sm group overflow-hidden">
+                    <summary class="p-6 font-bold cursor-pointer flex justify-between items-center text-gray-800 text-sm">
+                        <span><i class="fas fa-shopping-basket mr-2 text-orange-400"></i>超市</span>
+                        <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-6 pb-6 space-y-4">
+                        <p class="text-xs text-gray-600">昆布鹽</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <img src="images/shopping_super_1.jpg" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                <p class="hidden text-[10px] text-gray-400 italic">待上傳 (shopping_super_1.jpg)</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="images/shopping_super_2.jpg" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                <p class="hidden text-[10px] text-gray-400 italic">待上傳 (shopping_super_2.jpg)</p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-3xl border border-gray-100 shadow-sm group overflow-hidden">
+                    <summary class="p-6 font-bold cursor-pointer flex justify-between items-center text-gray-800 text-sm">
+                        <span><i class="fab fa-amazon mr-2 text-yellow-600"></i>網購Amazon</span>
+                        <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-6 pb-6 space-y-4">
+                        <p class="text-xs text-gray-600">硬式藥水、維他命Ｃ粉、ＩＨ爐墊</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <img src="images/shopping_amazon_1.jpg" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                <p class="hidden text-[10px] text-gray-400 italic">待上傳 (shopping_amazon_1.jpg)</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="images/shopping_amazon_2.jpg" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                <p class="hidden text-[10px] text-gray-400 italic">待上傳 (shopping_amazon_2.jpg)</p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-3xl border border-gray-100 shadow-sm group overflow-hidden">
+                    <summary class="p-6 font-bold cursor-pointer flex justify-between items-center text-gray-800 text-sm">
+                        <span><i class="fas fa-pills mr-2 text-pink-400"></i>藥妝</span>
+                        <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-6 pb-6 space-y-4">
+                        <p class="text-xs text-gray-600">Melano CC洗面乳＊５</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <img src="images/shopping_drug_1.jpg" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                <p class="hidden text-[10px] text-gray-400 italic">待上傳 (shopping_drug_1.jpg)</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="images/shopping_drug_2.jpg" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                <p class="hidden text-[10px] text-gray-400 italic">待上傳 (shopping_drug_2.jpg)</p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+
         <section id="references" class="anchor-section pb-12">
             <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center border-l-4 border-gray-400 pl-3">參考資料</h2>
             <div class="space-y-4">
@@ -488,25 +869,6 @@
                         <a href="https://tenki.jp/forecast/2/7/3410/4100/10days.html" target="_blank" class="flex-1 min-w-[100px] py-2 px-3 bg-gray-50 rounded-lg text-center text-xs font-bold hover:bg-emerald-50 transition">仙台市區</a>
                         <a href="https://tenki.jp/forecast/2/9/3510/6201/10days.html" target="_blank" class="flex-1 min-w-[100px] py-2 px-3 bg-gray-50 rounded-lg text-center text-xs font-bold hover:bg-emerald-50 transition">藏王樹冰</a>
                         <a href="https://tenki.jp/forecast/6/30/6200/27128/10days.html" target="_blank" class="flex-1 min-w-[100px] py-2 px-3 bg-gray-50 rounded-lg text-center text-xs font-bold hover:bg-emerald-50 transition">大阪難波</a>
-                    </div>
-                </details>
-
-                <details class="bg-white rounded-2xl border border-gray-200 overflow-hidden group">
-                    <summary class="p-4 font-bold cursor-pointer hover:bg-gray-50 flex justify-between items-center text-gray-600 text-sm">
-                        <span><i class="fas fa-shopping-cart mr-1 text-pink-500"></i> 購物清單</span>
-                        <i class="fas fa-chevron-down text-[10px] group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <div class="p-4 border-t bg-gray-50">
-                        <div class="bg-white p-4 rounded-xl text-xs space-y-2 mb-4">
-                            <label class="flex items-center gap-2"><input type="checkbox"> 無印：螢光筆、underwear（Ｍ）、壁掛架、草莓巧克力、冷泡茶包、磁吸計時器</label>
-                            <label class="flex items-center gap-2"><input type="checkbox"> 藥妝：Melano CC洗面乳＊５</label>
-                            <label class="flex items-center gap-2"><input type="checkbox"> 全家、7-11：零食、emina 起司甜點 (Cheese Dessert)</label>
-                            <label class="flex items-center gap-2"><input type="checkbox"> 超市：昆布鹽</label>
-                            <label class="flex items-center gap-2"><input type="checkbox"> AMAZON：硬式藥水、維他命Ｃ粉、ＩＨ爐墊</label>
-                            <label class="flex items-center gap-2"><input type="checkbox"> 大阪高島屋 <5%優惠卡(1F)+退稅8.4%>：肌膚之鑰(1F)、茅乃舍(B1F)、小倉山莊(B1F)</label>
-                        </div>
-                        <img src="images/shopping_list.jpg" alt="購物清單" class="rounded-xl shadow-md max-w-full h-auto mx-auto border" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-                        <p class="hidden text-[10px] text-gray-400 text-center italic">待上傳 (shopping_list.jpg)</p>
                     </div>
                 </details>
 
@@ -541,7 +903,7 @@
                                 <li>• <a href="https://maps.app.goo.gl/vYyP9fWzVvGfD9Gj7" target="_blank" class="text-pink-600 underline font-bold">北むら (Kitamura)</a>：米其林推薦 **壽喜燒** 老店。</li>
                                 <li>• <a href="https://maps.app.goo.gl/vYyP9fWzVvGfD9Gj7" target="_blank" class="text-pink-600 underline font-bold">燃えよ 麵助</a>：人氣極高，鴨湯/貝湯 **拉麵**。</li>
                                 <li>• <a href="https://maps.app.goo.gl/vYyP9fWzVvGfD9Gj7" target="_blank" class="text-pink-600 underline font-bold">蟹道樂</a>：道頓堀標誌性 **螃蟹料理**。</li>
-                                <li>• <a href="https://maps.app.goo.gl/vYyP9fWzVvGfD9Gj7" target="_blank" class="text-pink-600 underline">味乃家</a>：米其林必比登推薦大阪燒。</li>
+                                <li>• <a href="https://maps.app.goo.gl/vYyP9fWzVvGfD9Gj7" target="_blank" class="text-pink-600 underline font-bold">味乃家</a>：米其林必比登推薦大阪燒。</li>
                             </ul>
                         </div>
                     </div>
@@ -592,14 +954,13 @@
     </footer>
 
     <script>
-        // --- 新增：強制重新整理時回到最上方 ---
+        // --- 強制重新整理時回到最上方 ---
         if (history.scrollRestoration) {
-            history.scrollRestoration = 'manual'; // 告訴瀏覽器不要自動恢復捲動位置
+            history.scrollRestoration = 'manual';
         }
         window.onload = function() {
-            window.scrollTo(0, 0); // 確保載入完成後在頂部
+            window.scrollTo(0, 0);
         };
-        // ------------------------------------
 
         function smoothScroll(event, targetId) {
             event.preventDefault();
