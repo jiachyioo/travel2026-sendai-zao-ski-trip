@@ -253,7 +253,7 @@
                         <div class="ref-attractions">
                             <p class="text-xs font-bold text-gray-500 mb-2">💡 住宿資訊</p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• <a href="https://www.google.com/maps/search/?api=1&query=Zao+Fox+Village" target="_blank" class="font-bold underline text-red-500">地址</a>：〒980-0811 宮城県仙台市青葉区一番町四丁目2番12號</li>
+                                <li>• <a href="https://www.google.com/maps/search/?api=1&query=Zao+Fox+Village" target="_blank" class="font-bold underline text-red-500">地址</a>：〒980-0811 宮城県仙台市青葉區一番町四丁目2番12號</li>
                                 <li>• <a href="https://www.google.com/maps/search/?api=1&query=Zao+Fox+Village" target="_blank" class="font-bold underline text-red-500">電話</a>：050-5211-0300</li>
                                 <li>• <a href="https://www.google.com/maps/search/?api=1&query=Zao+Fox+Village" target="_blank" class="font-bold underline text-red-500">mail</a>：</li>
                             </ul>
@@ -372,58 +372,123 @@
             <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center border-l-4 border-yellow-500 pl-3">費用統計明細 (3大1小)</h2>
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
                 <div class="overflow-x-auto no-scrollbar">
-                    <table class="w-full text-left table-fixed border-collapse">
+                    <table class="w-full text-left table-fixed border-collapse" id="expenseTable">
                         <thead class="bg-gray-100 border-b text-gray-600">
                             <tr>
-                                <th class="w-[35%] p-4 font-bold text-[11px]">分類 / 項目</th>
-                                <th class="w-[20%] p-4 font-bold text-center text-[11px]">大人 (x3)</th>
-                                <th class="w-[20%] p-4 font-bold text-center text-[11px]">小孩 (x1)</th>
+                                <th class="w-[45%] p-4 font-bold text-[11px]">分類 / 項目</th>
+                                <th class="w-[15%] p-4 font-bold text-center text-[11px]">大人 (x3)</th>
+                                <th class="w-[15%] p-4 font-bold text-center text-[11px]">小孩 (x1)</th>
                                 <th class="w-[25%] p-4 font-bold text-right text-[11px]">小計</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100 text-[11px]">
-                            <tr class="bg-blue-600 text-white font-bold border-t-2 border-blue-800"><td colspan="4" class="px-4 py-1">【 住行 】</td></tr>
-                            <tr><td class="p-4 text-gray-500">台日機票 (已付) <TPE-KIX-SDJ></td><td colspan="3" class="p-4 text-right font-bold text-emerald-600">TWD 76,601</td></tr>
-                            <tr><td class="p-4 text-gray-500">仙台飯店：海茵娜 4晚 (已付)</td><td colspan="3" class="p-4 text-right font-bold text-emerald-600">TWD 12,336</td></tr>
-                            <tr><td class="p-4 text-gray-500">大阪飯店：相鐵 2晚 (已付)</td><td colspan="3" class="p-4 text-right font-bold text-emerald-600">TWD 14,057</td></tr>
-                            <tr class="bg-blue-50/30">
-                                <td class="p-4 font-medium">藏王 Waldberg</td>
+                            <!-- 住行大項 -->
+                            <tr class="bg-blue-600 text-white font-bold border-t-2 border-blue-800 category-header text-xl">
+                                <td colspan="4" class="px-4 py-1 flex justify-between items-center">
+                                    <span>【 住行 】</span>
+                                    <span class="text-[16px] opacity-90" id="cat-sum-1">小計: --</span>
+                                </td>
+                            </tr>
+                            <tr data-cat="1" data-val="76601" data-cur="TWD">
+                                <td class="p-4 text-gray-500 flex items-center"><input type="checkbox" checked onchange="updateExpenses()" class="mr-2 w-3 h-3">台日機票 (已付)</td>
+                                <td colspan="3" class="p-4 text-right font-bold text-emerald-600">TWD 76,601</td>
+                            </tr>
+                            <tr data-cat="1" data-val="12336" data-cur="TWD">
+                                <td class="p-4 text-gray-500 flex items-center"><input type="checkbox" checked onchange="updateExpenses()" class="mr-2 w-3 h-3">仙台飯店：海茵娜 4晚 (已付)</td>
+                                <td colspan="3" class="p-4 text-right font-bold text-emerald-600">TWD 12,336</td>
+                            </tr>
+                            <tr data-cat="1" data-val="14057" data-cur="TWD">
+                                <td class="p-4 text-gray-500 flex items-center"><input type="checkbox" checked onchange="updateExpenses()" class="mr-2 w-3 h-3">大阪飯店：相鐵 2晚 (已付)</td>
+                                <td colspan="3" class="p-4 text-right font-bold text-emerald-600">TWD 14,057</td>
+                            </tr>
+                            <tr class="bg-blue-50/30" data-cat="1" data-val="56040" data-cur="JPY">
+                                <td class="p-4 font-medium flex items-center"><input type="checkbox" checked onchange="updateExpenses()" class="mr-2 w-3 h-3">藏王 Waldberg (現場)</td>
                                 <td colspan="2" class="p-4 text-gray-500 text-center">日幣支付</td>
                                 <td class="p-4 text-right font-bold">¥56,040</td>
                             </tr>
-                            <tr>
-                                <td class="p-4 font-medium leading-tight">仙台機場 ↔ 市區</td>
+                            <tr data-cat="1" data-val="4620" data-cur="JPY">
+                                <td class="p-4 font-medium leading-tight flex items-center"><input type="checkbox" checked onchange="updateExpenses()" class="mr-2 w-3 h-3">仙台機場 ↔ 市區</td>
                                 <td class="p-4 text-center">¥1,320</td>
                                 <td class="p-4 text-center">¥660</td>
                                 <td class="p-4 text-right font-bold">¥4,620</td>
                             </tr>
-                            <tr>
-                                <td class="p-4 font-medium leading-tight">關西機場 ↔ 市區</td>
+                            <tr data-cat="1" data-val="6800" data-cur="JPY">
+                                <td class="p-4 font-medium leading-tight flex items-center"><input type="checkbox" checked onchange="updateExpenses()" class="mr-2 w-3 h-3">關西機場 ↔ 市區</td>
                                 <td class="p-4 text-center">¥1,940</td>
                                 <td class="p-4 text-center">¥980</td>
                                 <td class="p-4 text-right font-bold">¥6,800</td>
                             </tr>
-                            <tr>
-                                <td class="p-4 font-medium text-blue-800">山交巴士來回</td>
+                            <tr data-cat="1" data-val="17500" data-cur="JPY">
+                                <td class="p-4 font-medium text-blue-800 flex items-center"><input type="checkbox" checked onchange="updateExpenses()" class="mr-2 w-3 h-3">山交巴士來回</td>
                                 <td class="p-4 text-center">¥5,000</td>
                                 <td class="p-4 text-center">¥2,500</td>
                                 <td class="p-4 text-right font-bold">¥17,500</td>
                             </tr>
-                            <tr class="bg-emerald-600 text-white font-bold border-t-2 border-emerald-800"><td colspan="4" class="px-4 py-1">【 滑雪與活動 】</td></tr>
-                            <tr><td class="p-4 text-gray-500 italic">全日滑雪票 (1日參考)</td><td class="p-4 text-center text-gray-400">¥7,500</td><td class="p-4 text-center text-gray-400">¥3,750</td><td class="p-4 text-right text-gray-300">¥26,250</td></tr>
-                            <tr class="bg-emerald-50/10"><td class="p-4 font-bold">全日滑雪票 (2日票-飯店-需現金支付)</td><td class="p-4 text-center">¥15,000</td><td class="p-4 text-center">¥7,500</td><td class="p-4 text-right font-bold">¥52,500</td></tr>
-                            <tr class="bg-emerald-50/10"><td class="p-4 font-bold">雪具租借 (1日-鬧雪具)</td><td class="p-4 text-center">¥5,500</td><td class="p-4 text-center">¥4,300</td><td class="p-4 text-right font-bold">¥20,800</td></tr>
-                            <tr><td class="p-4 text-gray-500 italic">雪具租借 (1日-飯店)</td><td class="p-4 text-center text-gray-400">¥3,000</td><td class="p-4 text-center text-gray-400">¥3,000</td><td class="p-4 text-right text-gray-300">¥12,000</td></tr>
-                            <tr><td class="p-4">樹冰纜車+優先券</td><td class="p-4 text-center">¥5,400</td><td class="p-4 text-center">¥3,200</td><td class="p-4 text-right font-bold">¥19,400</td></tr>
-                            <tr class="bg-gray-800 text-white font-bold border-t-2 border-gray-900"><td colspan="4" class="px-4 py-1">【 其他 】</td></tr>
-                            <tr><td class="p-4">網路 (ESIM：10G/7D、3G/7D ；漫遊：)</td><td colspan="2" class="p-4 text-center text-gray-400 italic">$255 + $73</td><td class="p-4 text-right font-bold">--</td></tr>
-                            <tr><td class="p-4">旅行平安保險</td><td colspan="2" class="p-4 text-center text-gray-400 italic">金額待定</td><td class="p-4 text-right font-bold">--</td></tr>
+
+                            <!-- 滑雪大項 -->
+                            <tr class="bg-emerald-600 text-white font-bold border-t-2 border-emerald-800 category-header text-xl">
+                                <td colspan="4" class="px-4 py-1 flex justify-between items-center">
+                                    <span>【 滑雪與活動 】</span>
+                                    <span class="text-[16px] opacity-90" id="cat-sum-2">小計: --</span>
+                                </td>
+                            </tr>
+                            <tr class="text-gray-400" data-cat="2" data-val="26250" data-cur="JPY">
+                                <td class="p-4 italic flex items-center opacity-50"><input type="checkbox" onchange="updateExpenses()" class="mr-2 w-3 h-3">全日滑雪票 (1日參考)</td>
+                                <td class="p-4 text-center">¥7,500</td>
+                                <td class="p-4 text-center">¥3,750</td>
+                                <td class="p-4 text-right">¥26,250</td>
+                            </tr>
+                            <tr class="bg-emerald-50/10" data-cat="2" data-val="52500" data-cur="JPY">
+                                <td class="p-4 font-bold flex items-center"><input type="checkbox" checked onchange="updateExpenses()" class="mr-2 w-3 h-3">全日滑雪票 (2日票-飯店)</td>
+                                <td class="p-4 text-center">¥15,000</td>
+                                <td class="p-4 text-center">¥7,500</td>
+                                <td class="p-4 text-right font-bold">¥52,500</td>
+                            </tr>
+                            <tr class="bg-emerald-50/10" data-cat="2" data-val="20800" data-cur="JPY">
+                                <td class="p-4 font-bold flex items-center"><input type="checkbox" checked onchange="updateExpenses()" class="mr-2 w-3 h-3">雪具租借 (1日-鬧雪具)</td>
+                                <td class="p-4 text-center">¥5,500</td>
+                                <td class="p-4 text-center">¥4,300</td>
+                                <td class="p-4 text-right font-bold">¥20,800</td>
+                            </tr>
+                            <tr class="text-gray-400" data-cat="2" data-val="12000" data-cur="JPY">
+                                <td class="p-4 italic flex items-center opacity-50"><input type="checkbox" onchange="updateExpenses()" class="mr-2 w-3 h-3">雪具租借 (1日-飯店)</td>
+                                <td class="p-4 text-center">¥3,000</td>
+                                <td class="p-4 text-center">¥3,000</td>
+                                <td class="p-4 text-right">¥12,000</td>
+                            </tr>
+                            <tr data-cat="2" data-val="19400" data-cur="JPY">
+                                <td class="p-4 flex items-center"><input type="checkbox" onchange="updateExpenses()" class="mr-2 w-3 h-3">樹冰纜車+優先券</td>
+                                <td class="p-4 text-center">¥5,400</td>
+                                <td class="p-4 text-center">¥3,200</td>
+                                <td class="p-4 text-right font-bold">¥19,400</td>
+                            </tr>
+
+                            <!-- 其他大項 -->
+                            <tr class="bg-gray-800 text-white font-bold border-t-2 border-gray-900 category-header text-xl">
+                                <td colspan="4" class="px-4 py-1 flex justify-between items-center">
+                                    <span>【 其他 】</span>
+                                    <span class="text-[16px] opacity-90" id="cat-sum-3">小計: --</span>
+                                </td>
+                            </tr>
+                            <tr data-cat="3" data-val="328" data-cur="TWD">
+                                <td class="p-4 flex items-center"><input type="checkbox" checked onchange="updateExpenses()" class="mr-2 w-3 h-3">網路 (ESIM 已付)</td>
+                                <td colspan="2" class="p-4 text-center text-gray-400 italic">$255 + $73</td>
+                                <td class="p-4 text-right font-bold text-emerald-600">TWD 328</td>
+                            </tr>
+                            <tr data-cat="3" data-val="0" data-cur="TWD">
+                                <td class="p-4 flex items-center opacity-50"><input type="checkbox" onchange="updateExpenses()" class="mr-2 w-3 h-3">旅行平安保險</td>
+                                <td colspan="2" class="p-4 text-center text-gray-400 italic">金額待定</td>
+                                <td class="p-4 text-right font-bold">--</td>
+                            </tr>
                         </tbody>
                         <tfoot class="bg-gray-800 text-white font-bold">
-                            <tr><td colspan="3" class="p-4 text-center text-[10px] italic">預計現場支付日幣總計 (取2日)</td><td class="p-4 text-right text-yellow-400 text-base price-font">約 ¥194,400</td></tr>
+                            <tr>
+                                <td colspan="3" class="p-4 text-center text-[10px] italic">勾選項目現場支付日幣總計</td>
+                                <td class="p-4 text-right text-yellow-400 text-base price-font" id="final-jpy">約 ¥0</td>
+                            </tr>
                             <tr class="bg-gray-900">
-                                <td colspan="3" class="p-4 text-center text-[11px] border-t border-gray-700">全行程總計 (台幣估計)</td>
-                                <td class="p-4 text-right text-emerald-400 text-base price-font border-t border-gray-700">約 TWD 144,790</td>
+                                <td colspan="3" class="p-4 text-center text-[11px] border-t border-gray-700">全行程總計 (台幣估計, 匯率0.215)</td>
+                                <td class="p-4 text-right text-emerald-400 text-base price-font border-t border-gray-700" id="final-twd">約 TWD 0</td>
                             </tr>
                         </tfoot>
                     </table>
@@ -506,7 +571,7 @@
                             </div>
                         </div>
 
-                        <p class="text-[11px] text-gray-500 text-left leading-relaxed">スポーツ＆スノーボードのOCSTYLE<br>注文番号 224283-20260204-0134705074<br>支払い金額8,990円。<br>２／３訂２／６到<br></p>
+                        <p class="text-[11px] text-gray-500 text-left leading-relaxed">スポーツ＆スノーボードのOCSTYLE<br>注文番號 224283-20260204-0134705074<br>支払い金額8,990円。<br>２／３訂２／６到<br></p>
                         <a href="https://item.rakuten.co.jp/oc-style/119010027/" target="_blank" class="inline-block py-3 px-8 bg-orange-600 text-white rounded-xl text-xs font-bold shadow-lg hover:bg-orange-700 transition w-full md:w-auto">
                             <i class="fas fa-external-link-alt mr-2"></i>前往 樂天市場 購買
                         </a>
@@ -1112,6 +1177,7 @@
         }
         window.onload = function() {
             window.scrollTo(0, 0);
+            updateExpenses(); // 初始化計算
         };
 
         function smoothScroll(event, targetId) {
@@ -1134,6 +1200,49 @@
             const activeBtn = document.getElementById('btn-' + dayNumber);
             activeBtn.classList.add('tab-active');
             activeBtn.classList.remove('text-gray-400');
+        }
+
+        // --- 費用計算邏輯 ---
+        function updateExpenses() {
+            const JPY_RATE = 0.215; // 台幣估計使用的匯率
+            const rows = document.querySelectorAll('#expenseTable tbody tr[data-cat]');
+            
+            let totalTWD = 0;
+            let totalJPY = 0;
+            
+            // 各大項小計存儲 (以台幣為顯示單位)
+            let catSums = { 1: 0, 2: 0, 3: 0 }; 
+
+            rows.forEach(row => {
+                const checkbox = row.querySelector('input[type="checkbox"]');
+                const catId = row.getAttribute('data-cat');
+                const val = parseFloat(row.getAttribute('data-val')) || 0;
+                const cur = row.getAttribute('data-cur');
+
+                if (checkbox && checkbox.checked) {
+                    // 累加到總額
+                    if (cur === 'TWD') {
+                        totalTWD += val;
+                        catSums[catId] += val;
+                    } else if (cur === 'JPY') {
+                        totalJPY += val;
+                        catSums[catId] += (val * JPY_RATE);
+                    }
+                }
+            });
+
+            // 更新各大項小計顯示
+            for (let id in catSums) {
+                const el = document.getElementById(`cat-sum-${id}`);
+                if (el) {
+                    el.innerText = `勾選小計: 約 TWD ${Math.round(catSums[id]).toLocaleString()}`;
+                }
+            }
+
+            // 更新底部總額
+            const finalTWD = totalTWD + (totalJPY * JPY_RATE);
+            document.getElementById('final-jpy').innerText = `約 ¥${totalJPY.toLocaleString()}`;
+            document.getElementById('final-twd').innerText = `約 TWD ${Math.round(finalTWD).toLocaleString()}`;
         }
     </script>
 </body>
