@@ -231,7 +231,7 @@
         <section id="itinerary" class="anchor-section">
             <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center border-l-4 border-blue-500 pl-3">每日行程內容</h2>
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-                <div class="flex overflow-x-auto bg-gray-50 p-2 gap-1 no-scrollbar">
+                <div class="flex overflow-x-auto bg-gray-100 p-2 gap-1 no-scrollbar">
                     <button onclick="showDay(1)" id="btn-1" class="tab-btn tab-d1 flex-1 py-3 px-4 rounded-2xl text-[10px] sm:text-xs font-bold transition-all tab-active">Day 1</button>
                     <button onclick="showDay(2)" id="btn-2" class="tab-btn tab-d2 flex-1 py-3 px-4 rounded-2xl text-[10px] sm:text-xs font-bold transition-all text-gray-400">Day 2</button>
                     <button onclick="showDay(3)" id="btn-3" class="tab-btn tab-d3 flex-1 py-3 px-4 rounded-2xl text-[10px] sm:text-xs font-bold transition-all text-gray-400">Day 3</button>
@@ -241,38 +241,59 @@
                     <button onclick="showDay(7)" id="btn-7" class="tab-btn tab-d7 flex-1 py-3 px-4 rounded-2xl text-[10px] sm:text-xs font-bold transition-all text-gray-400">Day 7</button>
                 </div>
 
-                <div class="p-6 text-sm text-gray-600 min-h-[300px]">
-                    <div id="day-1" class="day-content space-y-3">
-                        <p class="font-bold text-blue-700 underline decoration-blue-200 decoration-2">2/09 (一) 飛往仙台：大阪轉機與購物</p>
-                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-blue-500/20 ml-1 text-gray-600">
-                            <li>06:30 TPE ➔ 09:55 KIX <span class="status-tag status-open">長榮航空</span></li>
-                            <li><span class="font-bold text-pink-600">KIX 關西機場轉機活動 (4.5小時)：</span>
-                                <ul class="pl-5 mt-1 text-xs space-y-1 text-gray-500">
-                                    <li>• <span class="font-bold">美食：</span>2F Tasty Street 各類大阪美食（拉麵、壽司）。</li>
-                                    <li>• <span class="font-bold">購物：</span>1F Nintendo Check-in、2F Pokémon Store、2F 3COINS / MUJI。</li>
-                                    <li>• <span class="font-bold">手續：</span>辦理入境與樂桃行李托運。</li>
-                                </ul>
-                            </li>
-                            <li>14:35 KIX ➔ 15:55 SDJ <span class="status-tag status-open">樂桃轉機</span></li>
-                            <li>16:44 ➔ 17:11 <a href="https://www.google.com/maps/dir/Sendai+Airport/Sendai+Station/" target="_blank" class="underline">前往仙台站</a> <span class="status-tag status-transport">交通</span><span class="transport-detail">(機場 Access 線, ¥660)</span></li>
-                            <li><span class="text-orange-600 font-bold">重要建議：</span>抵達後先前往飯店寄放行李。 <a href="https://www.google.com/maps/dir/Sendai+Station/Henn+na+Hotel+Sendai+Kokubuncho/" target="_blank" class="underline text-blue-500">仙台站 ➔ 飯店</a> <span class="status-tag status-transport">交通</span><span class="transport-detail">(地鐵 1 站 ¥210 或步行 15 分)</span></li>
-                            <li>17:30 <a href="https://www.google.com/maps/search/?api=1&query=仙台PARCO" target="_blank" class="map-btn">仙台 PARCO 本館</a> (10:00-20:30)：
-                                <ul class="pl-5 mt-1 text-xs space-y-1 text-gray-500">
-                                    <li>• <span class="font-bold text-blue-600">Jump Shop (8F)：</span>東北唯一官方店，排少週邊核心。</li>
-                                    <li>• <span class="font-bold text-gray-700">Smith (2F)：</span>質感手帳、日系特色文具。</li>
-                                    <li>• <span class="font-bold text-gray-700">BEAMS / UA (2-3F)：</span>指標性日系選物服飾。</li>
-                                    <li>• <span class="font-bold text-gray-700">MARKS&WEB (1F)：</span>日系精油保養，適合自用或送禮。</li>
-                                </ul>
-                            </li>
-                            <li>晚餐：<a href="https://www.google.com/maps/search/?api=1&query=牛舌善治郎+仙台站前本店" target="_blank" class="underline font-bold text-blue-600">牛舌善治郎</a> (22:30關)</li>
-                        </ul>
+                <div class="p-6 text-sm text-gray-600 min-h-[400px]">
+                    
+                    <!-- Day 1 -->
+                    <div id="day-1" class="day-content">
+                        <p class="font-bold text-blue-700 text-lg mb-4 border-b-2 border-blue-100 pb-2">2/09 (一) 飛往仙台：大阪轉機與購物</p>
+                        <div class="timeline-container">
+                            <div class="timeline-item timeline-item-active">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label">06:30 台北 TPE ➔ 09:55 大阪 KIX <span class="status-tag status-open">長榮航空</span></div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label">KIX 關西機場轉機 (4.5小時)</div>
+                                <div class="item-card">
+                                    <span class="font-bold block text-pink-600 mb-1">精選活動項目：</span>
+                                    <span class="item-detail">
+                                        • 1F：Nintendo Check-in (瑪利歐專賣店)<br>
+                                        • 2F：Pokémon Store / 3COINS (動漫與日系雜貨)<br>
+                                        • 3F：MUJI (無印良品)<br>
+                                        • 2F：Tasty Street 各類大阪美食（10:00-22:00）
+                                    </span>
+                                    <span class="item-detail text-red-500 font-bold">※ 需先辦理日本入境並托運樂桃國內行李。</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label">14:35 大阪 KIX ➔ 15:55 仙台 SDJ <span class="status-tag status-open">樂桃轉機</span></div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/dir/Sendai+Airport/Sendai+Station/" target="_blank" class="map-btn">16:44 仙台機場 ➔ 17:11 仙台站</a> <span class="status-tag status-transport">交通</span></div>
+                                <div class="transport-box">班次：仙台機場 Access 線<br>金額：¥660</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=仙台PARCO" target="_blank" class="map-btn">17:30 仙台 PARCO 本館購物</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">營業：10:00-20:30<br>特色：東北唯一 Jump Shop (8F)，Smith 文具 (2F)，Marks&Web 精油保養 (1F)。</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=牛舌善治郎+仙台站前本店" target="_blank" class="map-btn">晚餐：牛舌善治郎 本店</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">營業：11:00-22:30<br>備註：仙台必吃炭火牛舌。</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="ref-attractions">
-                            <p class="text-xs font-bold text-gray-500 mb-2">💡 住宿資訊 </p>
-                            <p class="text-xs font-bold text-gray-500 mb-2">   HENNNA HOTEL SENDAI KOKUBUNCHO</p>
+                            <p class="text-xs font-bold text-gray-500 mb-2">💡 住宿資訊：<a href="https://www.google.com/maps/search/?api=1&query=海茵娜飯店+仙台國分町" target="_blank" class="underline text-blue-600">HENNNA HOTEL SENDAI KOKUBUNCHO</a></p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• <a href="https://www.google.com/maps/search/?api=1&query=海茵娜飯店" target="_blank" class="font-bold underline text-red-500">地址</a>：〒980-0811 宮城県仙台市青葉區一番町四丁目2番12號</li>
-                                <li>• <a href="tel:050-5211-0300" class="font-bold underline text-red-500">電話</a>：050-5211-0300</li>
-                                <li>• <span class="font-bold">mail</span>：</li>
+                                <li>• 地址：〒980-0811 宮城県仙台市青葉區一番町四丁目2番12號</li>
+                                <li>• 電話：050-5211-0300</li>
                             </ul>
                         </div>
                         <div class="ref-attractions">
@@ -283,48 +304,139 @@
                             </ul>
                         </div>
                     </div>
-                    <div id="day-2" class="day-content hidden space-y-3">
-                        <p class="font-bold text-emerald-700 underline decoration-emerald-200 decoration-2">2/10 (二) 藏王樹冰與夜滑體驗</p>
-                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-emerald-500/20 ml-1 text-gray-600">
-                            <li>08:00 <a href="https://www.google.com/maps/search/?api=1&query=仙台駅東口" target="_blank" class="underline">仙台站東口</a> ➔ 09:25 <a href="https://www.google.com/maps/dir/Sendai+Station/Zao+Onsen+Bus+Terminal/" target="_blank" class="underline">抵藏王</a> <span class="status-tag status-transport">交通</span><span class="transport-detail">(山交巴士, ¥2,500)</span></li>
-                            <li>前往 <a href="https://www.google.com/maps/search/?api=1&query=Sakaiya+Mori+no+Hotel+Waldberg" target="_blank" class="underline">Waldberg 堺屋飯店</a> 放行李 / 辦理手續。</li>
-                            <li><span class="font-bold text-emerald-600">午餐建議：</span><a href="https://www.google.com/maps/search/?api=1&query=山口餅屋" target="_blank" class="underline">山口餅屋</a> (山形名產麻糬與暖胃蕎麥麵)。</li>
-                            <li><span class="font-bold">藏王樹冰觀賞：</span>搭乘 <a href="https://www.google.com/maps/search/?api=1&query=蔵王ロープウェイ山麓駅" target="_blank" class="underline">藏王纜車</a> (山麓站 ➔ 樹冰高原站 ➔ 地藏山頂站)。</li>
-                            <li>14:00 租雪具：<a href="https://www.google.com/maps/search/?api=1&query=Skiing+Now+鬧雪具" target="_blank" class="italic font-bold">Skiing Now 閙雪具</a>。</li>
-                            <li>21:00 前於 <a href="https://www.google.com/maps/search/?api=1&query=Uwanodai+Ski+Resort" target="_blank" class="underline">上台滑雪場</a> 享受夜滑練習。</li>
-                            <li><span class="font-bold text-emerald-600">晚餐建議：</span><a href="https://www.google.com/maps/search/?api=1&query=Otochaya+Zao" target="_blank" class="underline">音茶屋</a> (山下人氣餐酒館)。</li>
-                            <li><span class="text-red-500 font-bold">重要提醒：</span>晚餐後先買好隔日早餐，山上商店極少。</li>
-                        </ul>
+
+                    <!-- Day 2 -->
+                    <div id="day-2" class="day-content hidden">
+                        <p class="font-bold text-emerald-700 text-lg mb-4 border-b-2 border-emerald-100 pb-2">2/10 (二) 藏王樹冰與夜滑</p>
+                        <div class="timeline-container">
+                            <div class="timeline-item timeline-item-active">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/dir/Sendai+Station/Zao+Onsen+Bus+Terminal/" target="_blank" class="map-btn">08:00 仙台站 ➔ 09:25 抵藏王</a> <span class="status-tag status-transport">交通</span></div>
+                                <div class="transport-box">班次：山交巴士<br>金額：¥2,500</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=山口餅屋" target="_blank" class="map-btn">午餐推薦：山口餅屋</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">營業：10:00-17:00<br>備註：在地名物麻糬與熱蕎麥麵。</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=蔵王ロープウェイ山麓駅" target="_blank" class="map-btn">藏王樹冰觀賞 (三段纜車)</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">營業：08:30-17:00<br>路線：山麓站 ➔ 樹冰高原站 ➔ 地藏山頂站。</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label">14:00 租雪具：Skiing Now 閙雪具</div>
+                                <div class="item-card">
+                                    <span class="item-detail">營業：08:00-18:00<br>備註：建議預約。</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=Uwanodai+Ski+Resort" target="_blank" class="map-btn">21:00前 上台滑雪場夜滑</a></div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=Otochaya+Zao" target="_blank" class="map-btn">晚餐：音茶屋 (人氣餐酒館)</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">營業：11:00-20:00<br>重要：晚餐後買妥隔日早餐。</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="ref-attractions">
-                            <p class="text-xs font-bold text-gray-500 mb-2">💡 住宿資訊 </p>
-                            <p class="text-xs font-bold text-gray-500 mb-2">   Sakaiya Mori no Hotel Waldberg</p>
-                            <p class="text-xs font-bold text-gray-500 mb-2">   堺屋森のホテル　ヴァルトベルク</p>
+                            <p class="text-xs font-bold text-gray-500 mb-2">💡 住宿資訊：<a href="https://www.google.com/maps/search/?api=1&query=Sakaiya+Mori+no+Hotel+Waldberg" target="_blank" class="underline text-blue-600">Waldberg 堺屋飯店</a></p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• <a href="https://www.google.com/maps/search/?api=1&query=堺屋飯店" target="_blank" class="font-bold underline text-red-500">地址</a>：〒990-2301   山形縣山形市藏王溫泉清水坂889-1</li>
-                                <li>• <a href="tel:+81-23-694-9300" class="font-bold underline text-red-500">電話</a>：+81-23-694-9300</li>
-                                <li>• <span class="font-bold">mail</span>：mori-to-yama@waldberg-zao.com</li>
+                                <li>• 地址：〒990-2301 山形縣山形市藏王溫泉清水坂889-1</li>
+                                <li>• 電話：+81-23-694-9300</li>
+                                <li>• Email：mori-to-yama@waldberg-zao.com</li>
                             </ul>
                         </div>
                     </div>
-                    <div id="day-3" class="day-content hidden space-y-3">
-                        <p class="font-bold text-amber-700 underline decoration-amber-200 decoration-2">2/11 (三) 全日滑雪與溫泉街散策</p>
-                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-amber-500/20 ml-1">
-                            <li><span class="text-red-600 font-bold">08:00 前：</span>抵達 <a href="https://www.google.com/maps/search/?api=1&query=蔵王ロープウェイ山麓駅" target="_blank" class="underline">纜車站</a> (08:30開始) <span class="status-tag status-warn">假日人潮</span>。</li>
-                            <li><span class="font-bold">全日滑雪：</span>全家體驗不同等級雪道。</li>
-                            <li><span class="font-bold text-amber-600">午餐建議：</span><a href="https://www.google.com/maps/search/?api=1&query=三五郎小屋" target="_blank" class="underline">三五郎小屋 (Sangoro Hut)</a> (山中經典 lodge，大推牛排或熱湯)。</li>
-                            <li>下午漫步 <a href="https://www.google.com/maps/search/?api=1&query=Zao+Onsen+Street" target="_blank" class="underline">藏王溫泉街</a>，享受足湯與在地氛圍。</li>
-                            <li>16:30 <a href="https://www.google.com/maps/search/?api=1&query=蔵王温泉バスターミナル" target="_blank" class="underline">藏王</a> ➔ 17:55 <a href="https://www.google.com/maps/dir/Zao+Onsen+Bus+Terminal/Sendai+Station/" target="_blank" class="underline">返回仙台站</a> <span class="status-tag status-transport">交通</span><span class="transport-detail">(山交巴士, ¥2,500)</span></li>
-                            <li>前往 <a href="https://www.google.com/maps/search/?api=1&query=AEON+Sendai" target="_blank" class="underline font-bold text-amber-600">AEON 仙台</a> 採買水果、餅乾補貨。</li>
-                            <li>晚餐：<a href="https://www.google.com/maps/search/?api=1&query=札幌かに本家+仙台店" target="_blank" class="map-btn">札幌螃蟹本家</a> (需預約)。</li>
-                        </ul>
+
+                    <!-- Day 3 -->
+                    <div id="day-3" class="day-content hidden">
+                        <p class="font-bold text-amber-700 text-lg mb-4 border-b-2 border-amber-100 pb-2">2/11 (三) 全日滑雪與螃蟹宴</p>
+                        <div class="timeline-container">
+                            <div class="timeline-item timeline-item-active">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label">08:00 前抵達纜車站</div>
+                                <div class="item-card">
+                                    <span class="item-detail">備註：避開假日排隊人潮，展開全日滑雪。</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=三五郎小屋" target="_blank" class="map-btn">午餐推薦：三五郎小屋</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">營業：10:00-15:30<br>特色：山中經典 Lodge，位於「中央斜面 (16號纜車旁)」。</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=Zao+Onsen+Street" target="_blank" class="map-btn">下午：溫泉街散策與足湯</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">特色：老街懷舊氛圍，推薦品嚐「稻花餅」、公共浴場巡禮。</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/dir/Zao+Onsen+Bus+Terminal/Sendai+Station/" target="_blank" class="map-btn">16:30 藏王 ➔ 17:55 返回仙台</a> <span class="status-tag status-transport">交通</span></div>
+                                <div class="transport-box">班次：山交巴士<br>金額：¥2,500</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=AEON+Sendai" target="_blank" class="map-btn">AEON 仙台 水果補貨</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">營業：08:00-22:00</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=札幌かに本家+仙台店" target="_blank" class="map-btn">晚餐：札幌螃蟹本家 (預約制)</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">營業：11:30-22:00</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div id="day-4" class="day-content hidden space-y-3">
-                        <p class="font-bold text-purple-700 underline decoration-purple-200 decoration-2">2/12 (四) 聖地巡禮與青少年行程</p>
-                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-purple-500/20 ml-1 text-gray-600">
-                            <li>前往 <a href="https://www.google.com/maps/search/?api=1&query=カメイアリーナ仙台" target="_blank" class="map-btn">仙台市體育館</a> <span class="status-tag status-closed">整修休館中</span> (外觀拍照)</li>
-                            <li>購物：<a href="https://www.google.com/maps/search/?api=1&query=JUMP+SHOP+Sendai" target="_blank" class="underline">Jump Shop</a>、<a href="https://www.google.com/maps/search/?api=1&query=Pokemon+Center+Sendai" target="_blank" class="underline">寶可夢中心</a>、<a href="https://www.google.com/maps/search/?api=1&query=仙台ジョイポリス+VR" target="_blank" class="underline">Joypolis VR</a></li>
-                            <li>晚餐：<a href="https://www.google.com/maps/search/?api=1&query=肉十八+仙台駅前店" target="_blank" class="underline">肉十八 燒肉吃到飽</a> (預約制)</li>
-                        </ul>
+
+                    <!-- Day 4 -->
+                    <div id="day-4" class="day-content hidden">
+                        <p class="font-bold text-purple-700 text-lg mb-4 border-b-2 border-purple-100 pb-2">2/12 (四) 聖地拍照與購物</p>
+                        <div class="timeline-container">
+                            <div class="timeline-item timeline-item-active">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=カメイアリーナ仙台" target="_blank" class="map-btn">仙台市體育館 (體育館原型)</a> <span class="status-tag status-closed">整修中</span></div>
+                                <div class="item-card">
+                                    <span class="item-detail">
+                                        備註：作品重要聖地，僅能在館外外觀拍照。<br>
+                                        <i class="fas fa-thumbtack mr-1"></i> <b>日向 & 影山人孔蓋</b> 就在體育館門口附近。
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label">購物巡禮：動漫與電子</div>
+                                <div class="item-card">
+                                    <span class="item-detail">
+                                        • <a href="https://www.google.com/maps/search/?api=1&query=JUMP+SHOP+Sendai" target="_blank" class="underline text-blue-600 font-bold">Jump Shop</a> (10:00-20:30)<br>
+                                        • <a href="https://www.google.com/maps/search/?api=1&query=Pokemon+Center+Sendai" target="_blank" class="underline text-blue-600 font-bold">寶可夢中心</a> (10:00-20:00)<br>
+                                        • <a href="https://www.google.com/maps/search/?api=1&query=仙台ジョイポリス+VR" target="_blank" class="underline text-blue-600 font-bold">Joypolis VR</a> (10:00-20:00)
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=肉十八+仙台駅前店" target="_blank" class="map-btn">晚餐：肉十八 燒肉吃到飽 (預約制)</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">營業：16:00-23:00</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="ref-attractions">
                             <p class="text-xs font-bold text-gray-500 mb-2">💡 參考景點 (排球少年 & 青少年推薦)</p>
                             <ul class="text-[11px] space-y-1">
@@ -335,39 +447,96 @@
                             </ul>
                         </div>
                     </div>
-                    <div id="day-5" class="day-content hidden space-y-3">
-                        <p class="font-bold text-slate-700 underline decoration-slate-200 decoration-2">2/13 (五) 雙碑巡禮與前往大阪</p>
-                        <div class="bg-blue-50 p-3 rounded-xl border border-blue-100 mb-2">
-                            <p class="text-[11px] font-bold text-blue-700"><i class="fas fa-ticket-alt mr-1"></i> 今日建議購買：地鐵南北線一日券 (大人¥840 / 小孩¥420)</p>
+
+                    <!-- Day 5 -->
+                    <div id="day-5" class="day-content hidden">
+                        <p class="font-bold text-slate-700 text-lg mb-2 border-b-2 border-slate-100 pb-2">2/13 (五) 雙碑巡禮與大阪移動</p>
+                        
+                        <div class="bg-blue-50 p-3 rounded-xl border border-blue-100 mb-4 shadow-sm">
+                            <p class="text-[11px] font-bold text-blue-700 flex items-center">
+                                <i class="fas fa-ticket-alt mr-2 text-blue-500 text-sm"></i> 
+                                今日購票建議：地鐵一日券 (平日版大人¥840 / 小孩¥420)
+                            </p>
                         </div>
-                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-slate-500/20 ml-1 text-gray-600">
-                            <li>08:00 <a href="https://www.google.com/maps/search/?api=1&query=仙台朝市" target="_blank" class="map-btn">仙台朝市</a>：特色「仙台市民廚房」，必吃炸可樂餅、新鮮草莓。</li>
-                            <li>09:00 ➔ 09:06 <a href="https://www.google.com/maps/dir/Sendai+Station/Kita-Sendai+Station/" target="_blank" class="underline text-blue-500">北仙台站 (青葉碑)</a> <span class="status-tag status-transport">交通</span><span class="transport-detail">(地鐵南北線, ¥210)</span>
-                                <ul class="pl-5 mt-1 text-[11px] text-gray-500"><li>特色：尋找《排球少年》紀念碑「及川徹 & 岩泉一」。</li></ul>
-                            </li>
-                            <li>10:15 ➔ 10:35 <a href="https://www.google.com/maps/dir/Kita-Sendai+Station/Tomizawa+Station/" target="_blank" class="underline text-blue-500">富澤站 (公園碑)</a> <span class="status-tag status-transport">交通</span><span class="transport-detail">(地鐵南北線, ¥310)</span>
-                                <ul class="pl-5 mt-1 text-[11px] text-gray-500"><li>特色：尋找「日向翔陽 & 影山飛雄」紀念碑、拍攝仙台市體育館原型外觀。</li></ul>
-                            </li>
-                            <li>11:45 ➔ 11:58 <a href="https://www.google.com/maps/dir/Tomizawa+Station/Sendai+Station/" target="_blank" class="underline text-blue-500">返回仙台站</a> <span class="status-tag status-transport">交通</span><span class="transport-detail">(地鐵南北線, ¥310)</span></li>
-                            <li>12:35 ➔ 13:02 <a href="https://www.google.com/maps/dir/Sendai+Station/Sendai+Airport/" target="_blank" class="underline text-blue-500">前往機場</a> <span class="status-tag status-transport">交通</span><span class="transport-detail">(機場 Access 線, ¥660)</span></li>
-                            <li>15:05 SDJ ➔ 16:50 KIX <span class="status-tag status-open">樂桃航空</span></li>
-                            <li>入住 <a href="https://www.google.com/maps/search/?api=1&query=大阪難波相鐵飯店" target="_blank" class="map-btn">大阪難波相鐵飯店</a></li>
-                        </ul>
+
+                        <div class="timeline-container">
+                            <div class="timeline-item timeline-item-active">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=仙台市戰災復興紀念館" target="_blank" class="map-btn">飯店旁：及川 & 岩泉人孔蓋</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">位置：仙台市戰災復興紀念館前。備註：離飯店不遠，可順路拍照。</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=仙台朝市" target="_blank" class="map-btn">08:00 仙台朝市：市民廚房體驗</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">特色：現吃草莓、名物炸可樂餅。</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/dir/Sendai+Station/Kita-Sendai+Station/" target="_blank" class="map-btn">09:00 北仙台站 (青葉碑)</a> <span class="status-tag status-transport">交通</span></div>
+                                <div class="item-card">
+                                    <span class="item-detail">特色：及川徹 & 岩泉一紀念碑。</span>
+                                    <span class="item-detail">路徑：地鐵南北線, ¥210</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/dir/Kita-Sendai+Station/Tomizawa+Station/" target="_blank" class="map-btn">10:15 富澤站 (公園碑)</a> <span class="status-tag status-transport">交通</span></div>
+                                <div class="item-card">
+                                    <span class="item-detail">特色：日向翔陽 & 影山飛雄紀念碑、仙台體育館原型。</span>
+                                    <span class="item-detail">路徑：地鐵南北線, ¥310</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/dir/Sendai+Station/Sendai+Airport/" target="_blank" class="map-btn">12:35 仙台站 ➔ 機場</a> <span class="status-tag status-transport">交通</span></div>
+                                <div class="item-card">
+                                    <span class="item-detail">路徑：Access 線, ¥660</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label">15:05 SDJ ➔ 16:50 KIX <span class="status-tag status-open">樂桃航空</span></div>
+                            </div>
+                        </div>
                         <div class="ref-attractions">
-                            <p class="text-xs font-bold text-gray-500 mb-2">💡 住宿資訊</p>
+                            <p class="text-xs font-bold text-gray-500 mb-2">💡 住宿資訊：<a href="https://www.google.com/maps/search/?api=1&query=大阪難波站前相鐵FRESA+INN飯店" target="_blank" class="underline text-blue-600">大阪難波站前相鐵 FRESA INN 飯店</a></p>
                             <ul class="text-[11px] space-y-1">
-                                <li>• <a href="#" class="font-bold underline text-red-500">地址</a>：</li>
-                                <li>• <a href="#" class="font-bold underline text-red-500">電話</a>：</li>
-                                <li>• <span class="font-bold">mail</span>：</li>
+                                <li>• 地址：〒542-0076 大阪府大阪市中央區難波4-6-1</li>
+                                <li>• 電話：06-6647-2031</li>
                             </ul>
                         </div>
                     </div>
-                    <div id="day-6" class="day-content hidden space-y-3">
-                        <p class="font-bold text-pink-700 underline decoration-pink-200 decoration-2">2/14 (六) 大阪進階行程 (青少年推薦)</p>
-                        <ul class="list-disc pl-5 space-y-2 border-l-4 border-pink-500/20 ml-1 text-gray-600">
-                            <li>行程：<a href="https://www.google.com/maps/search/?api=1&query=VS+PARK" target="_blank" class="underline font-bold text-pink-600">VS PARK (互動運動中心)</a>、<a href="https://www.google.com/maps/search/?api=1&query=日本橋Animate" target="_blank" class="underline font-bold text-pink-600">日本橋 Animate (關西最大)</a></li>
-                            <li>晚餐建議：<a href="https://www.google.com/maps/search/?api=1&query=松阪牛燒肉M" target="_blank" class="underline">松阪牛燒肉 M</a> 或 <a href="https://www.google.com/maps/search/?api=1&query=北むら壽喜燒" target="_blank" class="underline">北むら壽喜燒</a></li>
-                        </ul>
+
+                    <!-- Day 6 -->
+                    <div id="day-6" class="day-content hidden">
+                        <p class="font-bold text-pink-700 text-lg mb-4 border-b-2 border-pink-100 pb-2">2/14 (六) 大阪運動與動漫</p>
+                        <div class="timeline-container">
+                            <div class="timeline-item timeline-item-active">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=VS+PARK" target="_blank" class="map-btn">VS PARK 互動運動體驗</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">營業：10:00-21:00</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label"><a href="https://www.google.com/maps/search/?api=1&query=日本橋Animate" target="_blank" class="map-btn">日本橋 Animate (關西最大)</a></div>
+                                <div class="item-card">
+                                    <span class="item-detail">營業：11:00-20:00</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label">晚餐：松阪牛燒肉 M / 北むら</div>
+                                <div class="item-card">
+                                    <span class="item-detail">重要：情人節當天必須提前預約。</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="ref-attractions">
                             <p class="text-xs font-bold text-gray-500 mb-2">💡 參考景點 (大阪萌寵與夜間首選)</p>
                             <ul class="text-[11px] space-y-1">
@@ -378,24 +547,33 @@
                             </ul>
                         </div>
                     </div>
-                    <div id="day-7" class="day-content hidden space-y-4 text-gray-600">
-                        <p class="font-bold text-gray-700 underline decoration-gray-200 decoration-2">2/15 (日) 分流搭機返台</p>
-                        <div class="border-l-4 border-orange-500 pl-3 bg-orange-50 p-2 rounded-r-xl">
-                            <p class="font-bold text-orange-600 text-xs">一人提早行程 (BR131)：</p>
-                            <ul class="text-[10px] space-y-1 mt-1">
-                                <li>09:40 ➔ 10:24 <a href="https://www.google.com/maps/dir/Namba+Station/Kansai+International+Airport/" target="_blank" class="underline">前往 KIX</a> <span class="status-tag status-transport">交通</span><span class="transport-detail">(南海急行, ¥970)</span></li>
-                                <li>12:55 登機返台。</li>
-                            </ul>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-3 bg-blue-50 p-2 rounded-r-xl">
-                            <p class="font-bold text-blue-600 text-xs">其餘成員行程 (BR129)：</p>
-                            <ul class="text-[10px] space-y-1 mt-1">
-                                <li>大阪採買 ＞ 難波午餐</li>
-                                <li>15:10 ➔ 15:54 <a href="https://www.google.com/maps/dir/Namba+Station/Kansai+International+Airport/" target="_blank" class="underline">前往 KIX</a> <span class="status-tag status-transport">交通</span><span class="transport-detail">(南海急行, ¥970)</span></li>
-                                <li>18:10 返台。</li>
-                            </ul>
+
+                    <!-- Day 7 -->
+                    <div id="day-7" class="day-content hidden">
+                        <p class="font-bold text-gray-700 text-lg mb-4 border-b-2 border-gray-100 pb-2">2/15 (日) 分流返程</p>
+                        <div class="timeline-container">
+                            <div class="timeline-item timeline-item-active">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label">一人提早行程 (BR131)</div>
+                                <div class="transport-box">09:40 難波站 ➔ 10:24 KIX<br>交通：南海急行, ¥970</div>
+                                <div class="item-card">
+                                    <span class="item-detail">12:55 登機 ➔ <span class="font-bold text-blue-700">預計 15:05 抵達桃園 TPE</span>。</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="time-label">其餘成員行程 (BR129)</div>
+                                <div class="item-card">
+                                    <span class="item-detail">難波最後採買與午餐。</span>
+                                </div>
+                                <div class="transport-box">15:10 難波站 ➔ 15:54 KIX<br>交通：南海急行, ¥970</div>
+                                <div class="item-card">
+                                    <span class="item-detail">18:10 登機 ➔ <span class="font-bold text-blue-700">預計 20:20 抵達桃園 TPE</span>。</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
